@@ -1,0 +1,13 @@
+#root {
+    position: fixed;
+    width: 100svw;
+    height: 100svh;
+    text-align: center;
+}
+
+#webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
