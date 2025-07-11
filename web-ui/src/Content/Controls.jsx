@@ -14,20 +14,17 @@ export function Controls({
     const aspect = size.width / size.height
     const distance = Math.abs(camera.position.z)
 
-    // 1. FOV needed to cover the visible width
     const halfWidth = visibleWidth / 2
     const halfHeightFromWidth = halfWidth / aspect
     const fovFromWidth = THREE.MathUtils.radToDeg(
       2 * Math.atan(halfHeightFromWidth / distance)
     )
 
-    // 2. FOV needed to cover the min visible height
     const halfMinHeight = minVisibleHeight / 2
     const fovFromMinHeight = THREE.MathUtils.radToDeg(
       2 * Math.atan(halfMinHeight / distance)
     )
 
-    // Use the larger FOV of the two to guarantee coverage
     const fov = Math.max(fovFromWidth, fovFromMinHeight)
 
     camera.fov = fov

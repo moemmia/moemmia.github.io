@@ -19,7 +19,7 @@ const { actions } = useAnimations(animations, groupRef)
   useEffect(() => {
     if (materials) {
       Object.entries(materials).forEach(([key, mat]) => {
-        mat.aoMapIntensity = 1
+        mat.aoMapIntensity = 0.8
         mat.needsUpdate = true
       })
     }
