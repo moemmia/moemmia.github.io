@@ -3,28 +3,36 @@ import { useEffect } from "react"
 import { useThree } from "@react-three/fiber"
 import * as THREE from "three"
 
-export function Controls({ visibleWidth  = 0.7 }) {
+
+export function Controls({
+  visibleWidth = 1,
+  minVisibleHeight = 1 
+}) {
   const { camera, size } = useThree()
 
   useEffect(() => {
     const aspect = size.width / size.height
-    const fovInRadians = (camera.fov * Math.PI) / 180
-    const distance = (visibleWidth / (2 * Math.tan(fovInRadians / 2))) / aspect
+    const distance = Math.abs(camera.position.z)
 
-    const direction = new THREE.Vector3()
-    camera.getWorldDirection(direction)
+    // 1. FOV needed to cover the visible width
+    const halfWidth = visibleWidth / 2
+    const halfHeightFromWidth = halfWidth / aspect
+    const fovFromWidth = THREE.MathUtils.radToDeg(
+      2 * Math.atan(halfHeightFromWidth / distance)
+    )
 
-    const newPosition = direction.clone().multiplyScalar(-distance)
+    // 2. FOV needed to cover the min visible height
+    const halfMinHeight = minVisibleHeight / 2
+    const fovFromMinHeight = THREE.MathUtils.radToDeg(
+      2 * Math.atan(halfMinHeight / distance)
+    )
 
-    const basePosition = new THREE.Vector3(0.1, 1, -0.5)
-    const baseRotation = new THREE.Euler(0, Math.PI + 0.2, 0)
+    // Use the larger FOV of the two to guarantee coverage
+    const fov = Math.max(fovFromWidth, fovFromMinHeight)
 
-    camera.position.copy(basePosition.clone().add(newPosition))
-    camera.rotation.copy(baseRotation)
+    camera.fov = fov
     camera.updateProjectionMatrix()
-  }, [camera, size, visibleWidth])
+  }, [camera, size, visibleWidth, minVisibleHeight])
 
-  return (
-    <></>
-  )
+  return null
 }

@@ -6,7 +6,7 @@ export function Env() {
   
   return (
     <>
-        <ambientLight intensity={1.7} />
+        <ambientLight intensity={3} />
         <EffectComposer
           enabled={true}
         >
@@ -17,15 +17,15 @@ export function Env() {
           <HueSaturation
             blendFunction={BlendFunction.COLOR}
             hue={0}
-            saturation={0.3}
+            saturation={0.4}
           />
           <ToneMapping
-            blendFunction={BlendFunction.COLOR}
-            adaptive={false}
-            resolution={256}
-            middleGrey={1}
-            maxLuminance={10.0}
-            averageLuminance={1} 
+            blendFunction={BlendFunction.NORMAL} // blend mode
+            adaptive={false} // toggle adaptive luminance map usage
+            resolution={256} // texture resolution of the luminance map
+            middleGrey={20} // middle grey factor
+            maxLuminance={16.0} // maximum luminance
+            averageLuminance={0.3} // average luminance
           />
         </EffectComposer>
     </>
