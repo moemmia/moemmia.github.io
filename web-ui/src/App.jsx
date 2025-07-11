@@ -4,7 +4,6 @@ import { Canvas } from '@react-three/fiber'
 import { Model } from './Content/Model';
 import { Env } from './Content/Environment';
 import { Controls } from './Content/Controls';
-import * as THREE from 'three'
 import { Front } from './Content/UX/Front';
 
 
@@ -13,7 +12,7 @@ function App() {
     <>
       <Front />
       <Canvas
-        camera={{fov:30, position:[0.1, 1, -0.5], rotation:[0, Math.PI + 0.2, 0]}}
+        camera={{position:[0.1, 1, -0.5], rotation:[0, Math.PI + 0.2, 0]}}
         id='webgl'
         gl={{
           antialias: true,
@@ -23,7 +22,7 @@ function App() {
       >
         <Env />
         <Model/>
-        <Controls visibleWidth={0.6} minVisibleHeight={0.5} />
+        <Controls visibleWidth={0.5} minVisibleHeight={0.5} />
       </Canvas>
     </>
   );

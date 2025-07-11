@@ -61,7 +61,7 @@ const { actions } = useAnimations(animations, groupRef)
   })
 
   return (
-    <group {...props} dispose={null} ref={groupRef}>>
+    <group {...props} dispose={null} ref={groupRef}>
       <mesh
         castShadow
         receiveShadow
