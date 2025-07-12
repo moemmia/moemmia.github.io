@@ -11,15 +11,15 @@ export function Model(props) {
   const { nodes, materials, animations } = useGLTF('/models/portfolio.glb')
   const { mouse } = useThree()
 
-const headRef = useRef()
-const groupRef = useRef()
+  const headRef = useRef()
+  const groupRef = useRef()
 
-const { actions } = useAnimations(animations, groupRef)
+  const { actions } = useAnimations(animations, groupRef)
 
   useEffect(() => {
     if (materials) {
       Object.entries(materials).forEach(([key, mat]) => {
-        mat.aoMapIntensity = 0.8
+        mat.aoMapIntensity = 1
         mat.needsUpdate = true
       })
     }
