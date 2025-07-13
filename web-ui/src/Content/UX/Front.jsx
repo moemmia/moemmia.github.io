@@ -9,7 +9,7 @@ export function Front() {
   const ref3 = useRef(null);
 
   useFrame(() => {
-    const offset = scroll.offset; // Rango 0 - 1
+    const offset = Math.max(0, scroll.offset);
 
     if (ref1.current) {
       ref1.current.style.opacity = `${1 - Math.min(Math.max((offset - 0) * 5, 0), 1)}`;

@@ -8,6 +8,8 @@ import { useThree, useFrame} from '@react-three/fiber'
 import * as THREE from "three"
 
 export function Model(props) {
+  const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+
   const { nodes, materials, animations } = useGLTF('/models/portfolio.glb')
   const { mouse } = useThree()
 
@@ -48,6 +50,8 @@ export function Model(props) {
   }, [nodes])
   
   useFrame(() => {
+    if(isTouchDevice) return;
+    
     const head = headRef.current
     if (!head) return
 

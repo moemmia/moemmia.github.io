@@ -43,7 +43,7 @@ export function Controls({visibleWidth = 1, minVisibleHeight = 1,  steps = [], d
   }, [steps]);
 
   useFrame(() => {
-    const t = scroll.offset;
+    const t = Math.max(0, scroll.offset);
     const totalSteps = parsedSteps.length;
     if (totalSteps < 2) return;
 
