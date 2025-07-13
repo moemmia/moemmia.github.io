@@ -6,8 +6,8 @@ export function useDosTexture(bundleUrl) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    const width = 320;
-    const height = 200;
+    const width = 640;
+    const height = 480;
 
     const canvas = document.createElement('canvas');
     canvas.width = width;

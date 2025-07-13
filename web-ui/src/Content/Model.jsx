@@ -10,7 +10,7 @@ import * as THREE from "three"
 import { useDosTexture } from './Customs/DosBox'
 
 export function Model(props) {
-  const texture = useDosTexture("https://v8.js-dos.com/bundles/digger.jsdos");
+  const texture = useDosTexture("/jsdos/bundle.jsdos"); // https://v8.js-dos.com/studio/# DO IT YOURSELF
 
   const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 
