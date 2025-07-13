@@ -7,7 +7,11 @@ import { useGLTF, useAnimations   } from '@react-three/drei'
 import { useThree, useFrame} from '@react-three/fiber'
 import * as THREE from "three"
 
+import { useDosTexture } from './Customs/DosBox'
+
 export function Model(props) {
+  const texture = useDosTexture("https://v8.js-dos.com/bundles/digger.jsdos");
+
   const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 
   const { nodes, materials, animations } = useGLTF('/models/portfolio.glb')
@@ -27,6 +31,12 @@ export function Model(props) {
     }
   }, [materials])
 
+  useEffect(() => {
+    if (texture) {
+      materials.PCScreen.map = texture
+      materials.PCScreen.needsUpdate = true
+    }
+  }, [texture])
   
   useEffect(() => {
     if (actions.rigAction) {
@@ -84,7 +94,7 @@ export function Model(props) {
           castShadow
           receiveShadow
           geometry={nodes['arcade-screen'].geometry}
-          material={materials.Screen}
+          material={materials.ARScreen}
         />
       </mesh>
       <mesh castShadow receiveShadow geometry={nodes.table.geometry} material={materials.Basic}>
@@ -115,7 +125,7 @@ export function Model(props) {
           castShadow
           receiveShadow
           geometry={nodes['pc-screen'].geometry}
-          material={materials.Screen}
+          material={materials.PCScreen}
         />
       </mesh>
       <mesh
