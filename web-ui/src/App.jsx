@@ -1,7 +1,7 @@
 import './App.css';
 
 import { Canvas } from '@react-three/fiber'
-import { Model } from './Content/Model';
+import { Model } from './Content/Props/Model';
 import { Env } from './Content/Environment';
 import { Controls } from './Content/Controls';
 import { Front } from './Content/UX/Front';
@@ -18,9 +18,10 @@ function App() {
           powerPreference: "low-power",
           localClippingEnabled: true
         }}
+         style={{ position: 'fixed', top: 0, left: 0 }}
       >
-        <Env />
         <Model/>
+        <Env />
         <ScrollControls pages={3} eps={1}>
           <Controls minVisibleHeight={0.65} visibleWidth={0.5}
                     steps={[
@@ -29,7 +30,7 @@ function App() {
                         rotation: [0, Math.PI + 0.2, 0],
                       },
                       {
-                        position: [0.5, 1.1, 0.33],
+                        position: [0.44, 1.05, 0.325],
                         rotation: [0, Math.PI / 2, 0],
                       },
                       {
