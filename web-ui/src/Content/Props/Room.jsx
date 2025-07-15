@@ -40,6 +40,12 @@ export default function Room({ nodes, materials }) {
         geometry={nodes.room.geometry}
         material={materials["Basic-L"]}
       />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes['pc-screen'].geometry}
+        material={materials.PcScreen}
+      />
     </>
   )
 }

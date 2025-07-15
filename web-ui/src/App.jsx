@@ -10,18 +10,26 @@ import { ScrollControls, Scroll } from '@react-three/drei';
 function App() {
   return (
     <>
+      <div id="html-overlay"
+      style={{
+        pointerEvents: 'none', 
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100svw',
+        height: '100swh',
+      }} />
       <Canvas
-        camera={{position:[0.1, 1, -0.5], rotation:[0, Math.PI + 0.2, 0]}}
+        camera={{position:[0.1, 1, -0.5], rotation:[0, Math.PI + 0.2, 0], far:10, near: 0.1}}
         id='webgl'
         gl={{
           antialias: true,
           powerPreference: "low-power",
           localClippingEnabled: true
         }}
-         style={{ position: 'fixed', top: 0, left: 0 }}
       >
-        <Model/>
         <Env />
+        <Model />
         <ScrollControls pages={3} eps={1}>
           <Controls minVisibleHeight={0.65} visibleWidth={0.5}
                     steps={[
@@ -39,6 +47,8 @@ function App() {
                       },
                     ]}
           />
+          <Scroll>
+          </Scroll>
           <Scroll html>
             <Front />
           </Scroll>

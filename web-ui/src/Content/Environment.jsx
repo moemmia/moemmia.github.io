@@ -1,4 +1,4 @@
-import { BrightnessContrast , EffectComposer, HueSaturation, ToneMapping } from '@react-three/postprocessing'
+import { BrightnessContrast , EffectComposer, HueSaturation } from '@react-three/postprocessing'
 import { BlendFunction} from 'postprocessing'
 
 export function Env() {

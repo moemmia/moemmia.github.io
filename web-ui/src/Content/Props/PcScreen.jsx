@@ -1,32 +1,35 @@
-import {Html} from '@react-three/drei'
-import { useThree } from "@react-three/fiber"
-import { Front } from '../UX/Front'
+import { Html } from '@react-three/drei'
+import PcDisplay from '../PCUX/PcDisplay'
 
-export default function PcScreen() {
+export default function PcScreen({ scaleFactor = 0.4 }) {
+  const portal = { current: document.getElementById('html-overlay') }
 
-  const { gl } = useThree()
-  const portal = { current: gl.domElement.parentNode }
+  // Escalado dinámico
+  const baseWidth = 1350
+  const baseHeight = 1230
+  const scaledWidth = baseWidth * scaleFactor
+  const scaledHeight = baseHeight * scaleFactor
+  const distanceFactor = 10
+  const scale = 0.01 / scaleFactor
 
   return (
-    <mesh position={[.016, 1.06873, 0.324415]}
-        rotation={[0, Math.PI / 2, 0]}>
+    <mesh position={[0.02, 1.06873, 0.324415]} rotation={[0, Math.PI / 2, 0]}>
       <Html
-        occlude="blending"
-        transform
         portal={portal}
-        distanceFactor={1}
-        style={{
-          userSelect: 'none',
-          willChange: 'transform',
-          backfaceVisibility: 'visible',
-        }}
+        occlude='blending'
+        transform
+        distanceFactor={distanceFactor}
+        scale={scale}
+        zIndexRange={[10, 0]}
       >
-        <div className="w-[135px] h-[123px] overflow-y-auto">
-          <div className="bg-black">
-            <p className="text-white text-base sm:text-3xl">
-              Moisés Muñiz Mangas Iglesias
-            </p>
-          </div>
+        <div
+          className="bg-white"
+          style={{
+            width: `${scaledWidth}px`,
+            height: `${scaledHeight}px`
+          }}
+        >
+          <PcDisplay />
         </div>
       </Html>
     </mesh>

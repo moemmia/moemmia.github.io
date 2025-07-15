@@ -8,7 +8,6 @@ export function Controls({visibleWidth = 1, minVisibleHeight = 1,  steps = [], d
   const scroll = useScroll();
 
   const targetPosition = useRef(new THREE.Vector3());
-  const targetRotation = useRef(new THREE.Euler());
 
 
   useEffect(() => {
@@ -32,7 +31,6 @@ export function Controls({visibleWidth = 1, minVisibleHeight = 1,  steps = [], d
     camera.updateProjectionMatrix()
   }, [camera, size, visibleWidth, minVisibleHeight])
 
-  // Pre-convierte a Vector3 y Euler
   const parsedSteps = useMemo(() => {
     return steps.map((step) => ({
       position: new THREE.Vector3(...step.position),
@@ -43,37 +41,33 @@ export function Controls({visibleWidth = 1, minVisibleHeight = 1,  steps = [], d
   }, [steps]);
 
   useFrame(() => {
-    const t = Math.max(0, scroll.offset);
-    const totalSteps = parsedSteps.length;
-    if (totalSteps < 2) return;
+  const t = Math.max(0, scroll.offset);
+  const totalSteps = parsedSteps.length;
+  if (totalSteps < 2) return;
 
-    const segmentCount = totalSteps - 1;
-    const segmentIndex = Math.floor(t * segmentCount);
-    const localT = (t * segmentCount) - segmentIndex;
+  const segmentCount = totalSteps - 1;
+  const segmentIndex = Math.floor(t * segmentCount);
+  const localT = (t * segmentCount) - segmentIndex;
 
-    const current = parsedSteps[segmentIndex];
-    const next = parsedSteps[Math.min(segmentIndex + 1, segmentCount)];
+  const current = parsedSteps[segmentIndex];
+  const next = parsedSteps[Math.min(segmentIndex + 1, segmentCount)];
 
-    let lerpT = 0;
+  let lerpT = 0;
+  if (localT >= deadzone) {
+    lerpT = (localT - deadzone) / (1 - deadzone);
+  }
 
-    if (localT >= deadzone) {
-      lerpT = (localT - deadzone) / (1 - deadzone);
-    }
+  targetPosition.current.copy(current.position).lerp(next.position, lerpT);
+  camera.position.lerp(targetPosition.current, 0.1);
 
-    // Interpolación entre pasos
-    targetPosition.current.copy(current.position).lerp(next.position, lerpT);
-    targetRotation.current.setFromVector3(
-      new THREE.Vector3().fromArray(current.rotation.toArray()).lerp(
-        new THREE.Vector3().fromArray(next.rotation.toArray()),
-        lerpT
-      )
-    );
+  const currentQuat = new THREE.Quaternion().setFromEuler(current.rotation);
+  const nextQuat = new THREE.Quaternion().setFromEuler(next.rotation);
+  const endQuat = currentQuat.clone().slerp(nextQuat, lerpT);
 
-    camera.position.lerp(targetPosition.current, 0.1);
-    camera.rotation.x += (targetRotation.current.x - camera.rotation.x) * 0.1;
-    camera.rotation.y += (targetRotation.current.y - camera.rotation.y) * 0.1;
-    camera.rotation.z += (targetRotation.current.z - camera.rotation.z) * 0.1;
-  });
+  camera.quaternion.slerp(endQuat, 0.1);
+});
+
+
 
   return null;
 }
