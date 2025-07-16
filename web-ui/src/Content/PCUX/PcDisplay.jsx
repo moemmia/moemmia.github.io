@@ -2,7 +2,7 @@ import '@react95/core/GlobalStyle';
 import '@react95/core/themes/win95.css';
 
 import { TaskBar, List, Modal, TitleBar } from '@react95/core';
-import { Phone2, Grpconv100, Progman34 } from '@react95/icons';
+import { Phone2, Grpconv100, Progman34, Awfxcg321303, Progman14 } from '@react95/icons';
 import { DosGameWindow } from './Components/DosGameWindow';
 import { DesktopItem } from './Components/DesktopItem';
 import { useState } from 'react';
@@ -21,24 +21,40 @@ export default function PcDisplay() {
       id: 'coding',
       name: 'Coding',
       icon: <Grpconv100 variant="32x32_4" />,
-      content: () => <div style={{ padding: 100 }}>...</div>,
+      content: () => <div style={{ padding: 100 }}></div>,
       showOnDesktop: true,
-      showInTaskbar: true,
+      showInTaskbar: false,
     },
     {
       id: 'resume',
       name: 'Resume',
       icon: <Progman34 variant="32x32_4" />,
-      content: () => <div style={{ padding: 100 }}>...</div>,
+      content: () => <div style={{ padding: 100 }}></div>,
       showOnDesktop: true,
-      showInTaskbar: true,
+      showInTaskbar: false,
     },
     {
       id: 'contact',
       name: 'Contact',
       icon: <Phone2 variant="32x32_4" />,
-      content: () => <div style={{ padding: 100 }}>...</div>,
+      content: () => <div style={{ padding: 100 }}></div>,
       showOnDesktop: true,
+      showInTaskbar: false,
+    },
+    {
+      id: 'source',
+      name: 'Source Code',
+      icon: <Progman14 variant="32x32_4" />,
+      action: () => {window.open("https://github.com/moemmia/moemmia.github.io", "_blank");},
+      showOnDesktop: false,
+      showInTaskbar: true,
+    },
+    {
+      id: 'credit',
+      name: 'Credit',
+      icon: <Awfxcg321303 variant="32x32_4" />,
+      content: () => <div style={{ padding: 100 }}></div>,
+      showOnDesktop: false,
       showInTaskbar: true,
     },
   ]);
@@ -86,7 +102,10 @@ export default function PcDisplay() {
             {desktopItems
               .filter((item) => item.showInTaskbar)
               .map((item) => (
-                <List.Item key={item.id} icon={item.icon} onClick={() => handleOpen(item.id)}>
+                <List.Item key={item.id} icon={item.icon} onClick={() => {
+                    handleOpen(item.id)
+                    item.action?.()
+                }}>
                   {item.name}
                 </List.Item>
               ))}

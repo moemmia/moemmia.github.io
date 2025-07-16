@@ -12,15 +12,16 @@ export function DesktopItem({ item, isOpen, onClose, onFocus, zIndex }) {
       }}
       onMouseDown={onFocus}
     >
-      <Modal
-        icon={item.icon}
-        title={item.name}
-        titleBarOptions={[
-          <TitleBar.Close key="close" onClick={onClose} />,
-        ]}
-      >
-        <Modal.Content>{item.content()}</Modal.Content>
-      </Modal>
-    </div>
+      {item.content &&
+        <Modal
+          icon={item.icon}
+          title={item.name}
+          titleBarOptions={[
+            <TitleBar.Close key="close" onClick={onClose} />,
+          ]}
+        >
+          <Modal.Content>{item.content()}</Modal.Content>
+        </Modal>}
+      </div>
   );
 }
