@@ -26,12 +26,12 @@ export function Front() {
         <div className="w-[100svw] h-[100svh] relative overflow-hidden">
           <div ref={ref1} className="absolute top-16 w-full flex flex-col items-center transition-opacity duration-500">
             <div className="ring ring-white/50 bg-black px-3 py-2 mb-3">
-              <p className="text-white text-base sm:text-3xl">
+              <p className="text-white text-base sm:text-3xl font-mono">
                 Moisés Muñiz Mangas
               </p>
             </div>
             <div className="ring ring-white/50 bg-black px-3 py-2 mb-3">
-              <p className="text-white text-xs sm:text-xl">
+              <p className="text-white text-xs sm:text-xl font-mono">
                 Software Engineer
               </p>
             </div>

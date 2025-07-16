@@ -2,7 +2,7 @@ import '@react95/core/GlobalStyle';
 import '@react95/core/themes/win95.css';
 
 import { TaskBar, List, Modal, TitleBar } from '@react95/core';
-import { ReaderClosed, WindowsExplorer } from '@react95/icons';
+import { MsDos, Notepad1 } from '@react95/icons';
 import { DosGameWindow } from './Components/DosGameWindow';
 import { DesktopItem } from './Components/DesktopItem';
 import { useState } from 'react';
@@ -12,7 +12,7 @@ export default function PcDisplay() {
     {
       id: 'doom',
       name: 'DOS Game',
-      icon: <ReaderClosed variant="32x32_4" />,
+      icon: <MsDos variant="32x32_32" />,
       content: () => <DosGameWindow />,
       showOnDesktop: true,
       showInTaskbar: false,
@@ -20,8 +20,8 @@ export default function PcDisplay() {
     {
       id: 'notepad',
       name: 'Notepad',
-      icon: <WindowsExplorer variant="32x32_4" />,
-      content: () => <div style={{ padding: 10 }}>Aquí va el Notepad</div>,
+      icon: <Notepad1 variant="32x32_4" />,
+      content: () => <div style={{ padding: 10 }}>...</div>,
       showOnDesktop: false,
       showInTaskbar: true,
     },
