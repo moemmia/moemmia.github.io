@@ -1,7 +1,7 @@
 import { Html } from '@react-three/drei'
 import PcDisplay from '../PCUX/PcDisplay'
 
-export default function PcScreen({ scaleFactor = 0.4 }) {
+export default function PcScreen({ scaleFactor = 0.5 }) {
   const portal = { current: document.getElementById('html-overlay') }
 
   // Escalado dinámico
@@ -13,7 +13,7 @@ export default function PcScreen({ scaleFactor = 0.4 }) {
   const scale = 0.01 / scaleFactor
 
   return (
-    <mesh position={[0.02, 1.06873, 0.324415]} rotation={[0, Math.PI / 2, 0]}>
+    <mesh position={[0.019, 1.06873, 0.324415]} rotation={[0, Math.PI / 2, 0]}>
       <Html
         portal={portal}
         occlude='blending'
@@ -23,7 +23,7 @@ export default function PcScreen({ scaleFactor = 0.4 }) {
         zIndexRange={[10, 0]}
       >
         <div
-          className="bg-white"
+          className="bg-[#5aa]"
           style={{
             width: `${scaledWidth}px`,
             height: `${scaledHeight}px`

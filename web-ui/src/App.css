@@ -11,3 +11,7 @@
     left: 0;
     outline: none;
 }
+
+#html-overlay > div{
+    background: rgb(85, 170, 170);
+}

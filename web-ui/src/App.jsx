@@ -47,8 +47,6 @@ function App() {
                       },
                     ]}
           />
-          <Scroll>
-          </Scroll>
           <Scroll html>
             <Front />
           </Scroll>
