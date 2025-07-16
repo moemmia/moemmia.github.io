@@ -30,7 +30,7 @@ export function DosGameWindow() {
   }, []);
 
   return (
-    <div style={{ background: 'black', width: '520px', aspectRatio: '1/1', pointerEvents: 'none'}}>
+    <div style={{ background: 'black', width: '400px', aspectRatio: '1/1', pointerEvents: 'none'}}>
       <div
         ref={containerRef}
         style={{

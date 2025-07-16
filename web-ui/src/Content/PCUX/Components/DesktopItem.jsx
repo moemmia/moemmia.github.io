@@ -7,8 +7,7 @@ export function DesktopItem({ item, isOpen, onClose, onFocus, zIndex }) {
     <div
       style={{
         position: "absolute",
-        top: `${50 + zIndex}px`,
-        left: `${50 + zIndex}px`,
+        left: `${100}px`,
         zIndex,
       }}
       onMouseDown={onFocus}
