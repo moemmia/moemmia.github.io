@@ -35,6 +35,14 @@ export function Front() {
                 Software Engineer
               </p>
             </div>
+            <section className="scroller">
+              <span className="scroll-icon">
+                <span className="scroll-icon__wheel-outer">
+                  <span className="scroll-icon__wheel-inner"></span>
+                </span>
+              </span>
+              <p className="text-black font-bold text-center pt-1 font-mono text-xs">Scroll</p>
+            </section>
           </div>
 
           <div ref={ref2} className="absolute top-1/4 w-full flex justify-center transition-opacity duration-500">

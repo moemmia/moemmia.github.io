@@ -45,3 +45,50 @@
     height: var(--r95-space-20);
     shape-rendering: auto;
 }
+
+@keyframes scroll {
+    0%   { transform: translateY(0); }
+    25%  { transform: translateY(-6px); }
+    50%  { transform: translateY(0); }
+    75%  { transform: translateY(6px); }
+    100% { transform: translateY(0); }
+}
+
+.scroll-icon__wheel-outer {
+    display: block;
+    position: absolute;
+    left: 7px;
+    top: 5px;
+    height: 12px;
+    width: 2px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.scroll-icon__wheel-inner {
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    background: #000000;
+    animation: scroll 2.75s ease-in-out infinite;
+}
+
+.scroll-icon {
+    display: block;
+    position: relative;
+    height: 30px;
+    width: 20px;
+    border: 2px solid #000000;
+    border-radius: 112px;
+}
+
+.scroller {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    bottom: 10%;
+    position: fixed;
+}
