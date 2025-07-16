@@ -9,12 +9,11 @@ export function DosGameWindow() {
       if (containerRef.current && !dosRef.current && window.Dos) {
         const dos = await window.Dos(containerRef.current, {
           wdosboxUrl: 'https://js-dos.com/wasm/js-dos-api.json',
-          url: 'https://v8.js-dos.com/bundles/doom.jsdos',
+          url: '/js-dos/Karateka.jsdos',
           renderAspect: '1/1',
           autoStart: true,
           kiosk: true,
           backendLocked: true,
-          backend: 'dosbox',
           mouseCapture: false,
           volume: 0.2
         });
@@ -31,7 +30,7 @@ export function DosGameWindow() {
   }, []);
 
   return (
-    <div style={{ background: 'black', width: '420px', aspectRatio: '1/1'}}>
+    <div style={{ background: 'black', width: '520px', aspectRatio: '1/1', pointerEvents: 'none'}}>
       <div
         ref={containerRef}
         style={{

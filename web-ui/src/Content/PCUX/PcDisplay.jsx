@@ -2,7 +2,7 @@ import '@react95/core/GlobalStyle';
 import '@react95/core/themes/win95.css';
 
 import { TaskBar, List, Modal, TitleBar } from '@react95/core';
-import { MsDos, Notepad1 } from '@react95/icons';
+import { Phone2, Grpconv100, Progman34 } from '@react95/icons';
 import { DosGameWindow } from './Components/DosGameWindow';
 import { DesktopItem } from './Components/DesktopItem';
 import { useState } from 'react';
@@ -10,19 +10,35 @@ import { useState } from 'react';
 export default function PcDisplay() {
   const [desktopItems] = useState([
     {
-      id: 'doom',
-      name: 'DOS Game',
-      icon: <MsDos variant="32x32_32" />,
+      id: 'karateka',
+      name: 'Karateka',
+      icon: <img src="js-dos/karateka.png" className='w-[32px] r95_1ct83mo9 object-contain object-left'/>,
       content: () => <DosGameWindow />,
       showOnDesktop: true,
       showInTaskbar: false,
     },
     {
-      id: 'notepad',
-      name: 'Notepad',
-      icon: <Notepad1 variant="32x32_4" />,
-      content: () => <div style={{ padding: 10 }}>...</div>,
-      showOnDesktop: false,
+      id: 'coding',
+      name: 'Coding',
+      icon: <Grpconv100 variant="32x32_4" />,
+      content: () => <div style={{ padding: 100 }}>...</div>,
+      showOnDesktop: true,
+      showInTaskbar: true,
+    },
+    {
+      id: 'resume',
+      name: 'Resume',
+      icon: <Progman34 variant="32x32_4" />,
+      content: () => <div style={{ padding: 100 }}>...</div>,
+      showOnDesktop: true,
+      showInTaskbar: true,
+    },
+    {
+      id: 'contact',
+      name: 'Contact',
+      icon: <Phone2 variant="32x32_4" />,
+      content: () => <div style={{ padding: 100 }}>...</div>,
+      showOnDesktop: true,
       showInTaskbar: true,
     },
   ]);
@@ -48,7 +64,7 @@ export default function PcDisplay() {
     <div className="w-full h-full bg-[#5aa] relative overflow-hidden">
 
       {/* Ícons */}
-      <div className="absolute inset-0 p-4 grid grid-cols-7  grid-rows-7 gap-x-8 gap-y-8">
+      <div className="absolute inset-0 p-4 grid grid-cols-7  grid-rows-7 gap-x-8 gap-y-8 grid-flow-col">
         {desktopItems
           .filter((item) => item.showOnDesktop)
           .map((item) => (

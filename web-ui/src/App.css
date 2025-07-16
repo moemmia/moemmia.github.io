@@ -36,3 +36,12 @@
     width: 100% !important;
     height: 100% !important;
 }
+
+.r95_1ct83mo9 img {
+    margin-top: var(--r95-space-4);
+    margin-right: var(--r95-space-4);
+    min-width: var(--r95-space-2);
+    width: var(--r95-space-20);
+    height: var(--r95-space-20);
+    shape-rendering: auto;
+}
