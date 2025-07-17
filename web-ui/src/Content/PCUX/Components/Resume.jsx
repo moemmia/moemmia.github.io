@@ -36,20 +36,22 @@ export function Resume() {
               </Fieldset>
           </Tab>
           <Tab title="Experience">
-            <Frame padding="$10">
-              <Checkbox readOnly checked>
-                <b>Immersive Technologies Developer</b> at CTIC Technological Center (Oct 2021 – Present)
-              </Checkbox>
-              <Checkbox readOnly checked={false}>
-                <b>Web Developer</b> at Imascono (Jun 2021 – Oct 2021)
-              </Checkbox>
-              <Checkbox readOnly checked={false}>
-                <b>Mobile Developer</b> at GooApps (Nov 2019 – Oct 2020)
-              </Checkbox>
-              <Checkbox readOnly checked={false}>
-                <b>Web Developer</b> at Adele Robots (Jan 2019 – May 2019)
-              </Checkbox>
-            </Frame>
+            <Fieldset legend="" width="100%">
+              <Frame padding="$10">
+                <Checkbox readOnly checked>
+                  <b>Immersive Technologies Developer</b> at CTIC Technological Center (Oct 2021 – Present)
+                </Checkbox>
+                <Checkbox readOnly checked={false}>
+                  <b>Web Developer</b> at Imascono (Jun 2021 – Oct 2021)
+                </Checkbox>
+                <Checkbox readOnly checked={false}>
+                  <b>Mobile Developer</b> at GooApps (Nov 2019 – Oct 2020)
+                </Checkbox>
+                <Checkbox readOnly checked={false}>
+                  <b>Web Developer</b> at Adele Robots (Jan 2019 – May 2019)
+                </Checkbox>
+              </Frame>
+            </Fieldset>
           </Tab>
           <Tab title="Skills">
               <Fieldset legend="Programming" width="100%" height="170px" className="overflow-y-scroll">
