@@ -91,7 +91,7 @@ export function Resume() {
               </Fieldset>
           </Tab>
       </Tabs>
-      {/* <Button className='mt-2 w-fit self-end'>Download CV</Button> */}
+      <Button className='mt-2 w-fit self-end'>Download CV</Button>
     </div>
   );
 }
