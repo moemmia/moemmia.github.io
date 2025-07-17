@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export function DosGameWindow() {
+export function DosGameWindow({url}) {
   const containerRef = useRef(null);
   const dosRef = useRef(null);
 
@@ -9,7 +9,7 @@ export function DosGameWindow() {
       if (containerRef.current && !dosRef.current && window.Dos) {
         const dos = await window.Dos(containerRef.current, {
           wdosboxUrl: 'https://js-dos.com/wasm/js-dos-api.json',
-          url: '/js-dos/Karateka.jsdos',
+          url: url,
           renderAspect: '1/1',
           autoStart: true,
           kiosk: true,

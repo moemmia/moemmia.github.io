@@ -1,19 +1,23 @@
 import '@react95/core/GlobalStyle';
 import '@react95/core/themes/win95.css';
 
-import { TaskBar, List, Modal, TitleBar } from '@react95/core';
-import { Phone2, Grpconv100, Progman34, Awfxcg321303, Progman14 } from '@react95/icons';
+import { TaskBar, List } from '@react95/core';
+import { Phone2, Grpconv100, Progman34, Awfxcg321303, Progman14, Computer4 } from '@react95/icons';
 import { DosGameWindow } from './Components/DosGameWindow';
 import { DesktopItem } from './Components/DesktopItem';
 import { useState } from 'react';
+import { Contact } from './Components/Contact';
+import { Resume } from './Components/Resume';
+import { Coding } from './Components/Coding';
+import { Credits} from './Components/Credits'
 
 export default function PcDisplay() {
   const [desktopItems] = useState([
     {
       id: 'karateka',
       name: 'Karateka',
-      icon: <img src="js-dos/karateka.png" className='w-[32px] r95_1ct83mo9 object-contain object-left'/>,
-      content: () => <DosGameWindow />,
+      icon: <img src="icons/karateka.webp" className='w-[32px] r95_1ct83mo9 object-contain object-left'/>,
+      content: () => <DosGameWindow url='/js-dos/Karateka.jsdos'/>,
       showOnDesktop: true,
       showInTaskbar: false,
     },
@@ -21,7 +25,7 @@ export default function PcDisplay() {
       id: 'coding',
       name: 'Coding',
       icon: <Grpconv100 variant="32x32_4" />,
-      content: () => <div style={{ padding: 100 }}></div>,
+      content: () => <Coding />,
       showOnDesktop: true,
       showInTaskbar: false,
     },
@@ -29,7 +33,7 @@ export default function PcDisplay() {
       id: 'resume',
       name: 'Resume',
       icon: <Progman34 variant="32x32_4" />,
-      content: () => <div style={{ padding: 100 }}></div>,
+      content: () => <Resume />,
       showOnDesktop: true,
       showInTaskbar: false,
     },
@@ -37,7 +41,7 @@ export default function PcDisplay() {
       id: 'contact',
       name: 'Contact',
       icon: <Phone2 variant="32x32_4" />,
-      content: () => <div style={{ padding: 100 }}></div>,
+      content: () => <Contact/>,
       showOnDesktop: true,
       showInTaskbar: false,
     },
@@ -50,10 +54,10 @@ export default function PcDisplay() {
       showInTaskbar: true,
     },
     {
-      id: 'credit',
-      name: 'Credit',
+      id: 'credits',
+      name: 'Credits',
       icon: <Awfxcg321303 variant="32x32_4" />,
-      content: () => <div style={{ padding: 100 }}></div>,
+      content: () => <Credits />,
       showOnDesktop: false,
       showInTaskbar: true,
     },
@@ -109,6 +113,10 @@ export default function PcDisplay() {
                   {item.name}
                 </List.Item>
               ))}
+              <List.Divider></List.Divider>
+              <List.Item icon={<Computer4 variant="32x32_4" />} onClick={() => {}}>
+                Shut Down...
+              </List.Item>
           </List>
         }
       />
