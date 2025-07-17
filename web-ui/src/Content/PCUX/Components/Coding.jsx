@@ -23,7 +23,7 @@ const PROJECTS = {
     name: '3D Portfolio',
     tech: ['React', 'Three.js', 'Tailwind'],
     year: '2025',
-    link: 'https://moemmia.github.io',
+    link: 'https://github.com/moemmia/moemmia.github.io',
     description: 'Personal website showcasing my projects and skills in a 3D environment.',
     icon: <Mshtml32536 variant="16x16_4" />,
     category: 'Web',
@@ -156,9 +156,9 @@ function TechList({ tech }) {
 function ProjectPanel({ project }) {
   if (!project) {
     return (
-      <div style={{ padding: 12 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
         <TitleBar title="_" />
-        <p style={{ marginTop: 8, fontSize: '0.8rem' }}>Pick an item from the list on the left.</p>
+        <p style={{ margin: '16px', fontSize: '0.8rem' }}>Pick an item from the list on the left.</p>
       </div>
     );
   }

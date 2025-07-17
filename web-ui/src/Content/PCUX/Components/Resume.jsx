@@ -52,18 +52,18 @@ export function Resume() {
             </Frame>
           </Tab>
           <Tab title="Skills">
-              <Fieldset legend="Programming" width="100%" height="200px" className="overflow-auto">
+              <Fieldset legend="Programming" width="100%" height="170px" className="overflow-y-scroll">
                 <Frame padding="$10" className="flex flex-col gap-2">
                   <p>• Extended Realities (XR)
                   <ProgressBar percent={99} /></p> 
+
+                  <p>• Unity / C#
+                  <ProgressBar percent={75} /></p> 
 
                   <p>• React / Redux
                   <ProgressBar percent={75} /></p> 
 
                   <p>• ThreeJS / Javascript
-                  <ProgressBar percent={75} /></p> 
-
-                  <p>• Unity / C#
                   <ProgressBar percent={75} /></p> 
 
                   <p>• HTML / CSS

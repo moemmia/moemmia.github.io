@@ -16,7 +16,7 @@ export default function Arcade({ nodes, materials }) {
         material={materials.Keyboard}
         position={[0, 0, 0.115]}
       />
-      <ArcadeScreen nodes={nodes}/>
+      <ArcadeScreen nodes={nodes} />
     </mesh>
   )
 }
