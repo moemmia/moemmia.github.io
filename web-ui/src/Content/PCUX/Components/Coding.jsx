@@ -21,7 +21,7 @@ const PROJECTS = {
     id: 'portfolio',
     label: 'portfolio.html',
     name: '3D Portfolio',
-    tech: ['React', 'Three.js', 'Tailwind'],
+    tech: ['React', 'Three.js', 'Tailwind', 'Blender'],
     year: '2025',
     link: 'https://github.com/moemmia/moemmia.github.io',
     description: 'Personal website showcasing my projects and skills in a 3D environment.',
@@ -31,11 +31,11 @@ const PROJECTS = {
   'us-ar': {
     id: 'us-ar',
     label: 'us-ar.apk',
-    name: 'US-AR Mobile App',
+    name: 'US-AR',
     tech: ['Ionic', 'Firebase', 'Android'],
     year: '2022',
     link: 'https://github.com/moemmia/TFG_AR',
-    description: 'Application aimed at evaluating the usability of augmented reality systems. Built as my final degree project, focusing on user interaction and real-world usability testing.',
+    description: 'Mobile application aimed at evaluating the usability of augmented reality systems. Built as my final degree project, focusing on user interaction and real-world usability testing.',
     icon: <Fte128 variant="16x16_4" />,
     category: 'Mobile',
   },
@@ -43,7 +43,7 @@ const PROJECTS = {
     id: 'reactive',
     label: 'reactive.exe',
     name: 'Reactive',
-    tech: ['Unity', 'OpenXR'],
+    tech: ['Unity', 'OpenXR', 'WebRTC'],
     year: '2021',
     link: '',
     description: 'Virtual reality application integrated with a remote control system via WebRTC, specifically designed to support pediatric patients with delirium.',
@@ -54,7 +54,7 @@ const PROJECTS = {
     id: 'balaçera',
     label: 'balaçera.exe',
     name: 'Balaçera: Bullet Purgatory',
-    tech: ['Unity', 'WebGL', 'Firebase'],
+    tech: ['Unity', 'WebGL', 'Firebase', 'Aseprite'],
     year: '2023',
     link: 'https://outsidederoutine.itch.io/balacera',
     description: 'Arcade 2D bullet hell videogame.',
@@ -65,7 +65,7 @@ const PROJECTS = {
     id: 'pogo',
     label: 'pogo.exe',
     name: 'Pogo For Workgroups',
-    tech: ['Unity', 'Windows'],
+    tech: ['Unity', 'Windows', 'Blender'],
     year: '2020',
     link: 'https://moemm.itch.io/pogoforworkgroups',
     description: 'Playful physics-based videogame created for a work-themed game jam.',
@@ -76,7 +76,7 @@ const PROJECTS = {
     id: 'drac',
     label: 'drac.exe',
     name: 'Al rescate del dragón',
-    tech: ['Unity', 'Windows'],
+    tech: ['Unity', 'Windows', 'Blender'],
     year: '2020',
     link: 'https://moemm.itch.io/al-rescate-del-dragon',
     description: 'Narrative videogame created for the Sant Jordi’s game jam.',
@@ -86,8 +86,8 @@ const PROJECTS = {
   museum: {
     id: 'museum',
     label: 'museum.exe',
-    name: 'Hundrum days at the routine museum',
-    tech: ['Unity', 'WebGL', 'Multiplayer'],
+    name: 'Hundrum days at the routine mu...',
+    tech: ['Unity', 'WebGL', 'Photon', 'Blender'],
     year: '2022',
     link: 'https://outsidederoutine.itch.io/humdrum-days-at-the-routine-museum',
     description: 'Explorable digital art gallery.',
@@ -98,7 +98,7 @@ const PROJECTS = {
     id: 'elections',
     label: 'elections.exe',
     name: 'Election Day',
-    tech: ['Unity', 'Windows'],
+    tech: ['Unity', 'Windows', 'Blender'],
     year: '2018',
     link: 'https://outsidederoutine.itch.io/election-day',
     description: 'Narrative decision-making experience',
@@ -109,7 +109,7 @@ const PROJECTS = {
     id: 'hand',
     label: 'hand.exe',
     name: 'Hand Wall',
-    tech: ['Unity', 'WebGL'],
+    tech: ['Unity', 'WebGL', 'Blender'],
     year: '2017',
     link: 'https://moemm.itch.io/hand-wall',
     description: 'Skill-based videogame where you control individual fingers with separate keys.',
@@ -205,7 +205,7 @@ export function Coding() {
         </Frame>
       </Frame>
 
-      <Frame w="280px" h="260px" bgColor="$material" boxShadow="$in">
+      <Frame w="255px" h="260px" bgColor="$material" boxShadow="$in">
         <ProjectPanel project={selectedProject} />
       </Frame>
     </div>

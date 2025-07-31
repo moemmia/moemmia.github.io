@@ -17,7 +17,7 @@ export function Credits() {
       <Fieldset legend="Tools & Tech" width="100%">
         <Frame padding="$7">
           <p>
-            <b>Built with</b>_ react-three-fiber, react95, js-dos.
+            <b>Built with</b>_ react-three-fiber, react95, js-dos, blender.
           </p>
         </Frame>
       </Fieldset>

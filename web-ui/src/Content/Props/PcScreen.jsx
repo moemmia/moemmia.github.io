@@ -1,11 +1,11 @@
 import { Html } from '@react-three/drei'
 import PcDisplay from '../PCUX/PcDisplay'
 
-export default function PcScreen({ scaleFactor = 0.44}) {
+export default function PcScreen({ scaleFactor = 0.392}) {
   const portal = { current: document.getElementById('html-overlay') }
 
   // Escalado dinámico
-  const baseWidth = 1350
+  const baseWidth = 1350 
   const baseHeight = 1230
   const scaledWidth = baseWidth * scaleFactor
   const scaledHeight = baseHeight * scaleFactor

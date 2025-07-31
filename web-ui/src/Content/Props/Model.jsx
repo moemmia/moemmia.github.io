@@ -1,15 +1,16 @@
 import { useRef } from 'react'
 import { useGLTF, useAnimations, useProgress } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
-import * as THREE from "three"
 import Character from './Character'
 import Room from './Room'
 import Arcade from './Arcade'
 import PcScreen from './PcScreen'
 
+
+// https://gltf-compressor.com && https://gltf.pmnd.rs
 export function Model({setProgress}) {
   const groupRef = useRef()
-  const { nodes, materials, animations } = useGLTF('/models/portfolio.glb')
+  const { nodes, materials, animations } = useGLTF('/models/portfolio_compressed.glb')
   const { mouse } = useThree()
   const { actions } = useAnimations(animations, groupRef)
 
@@ -32,4 +33,4 @@ export function Model({setProgress}) {
   )
 }
 
-useGLTF.preload('/models/portfolio.glb')
+useGLTF.preload('/models/portfolio_compressed.glb')

@@ -1,8 +1,9 @@
 import { Modal, TitleBar } from "@react95/core";
 
 export function DesktopItem({ item, isOpen, onClose, onFocus, zIndex }) {
-  if (!isOpen) return null;
 
+  if (!isOpen) return null;
+  
   return (
     <div
       style={{
@@ -14,6 +15,13 @@ export function DesktopItem({ item, isOpen, onClose, onFocus, zIndex }) {
     >
       {item.content &&
         <Modal
+          dragOptions={{
+            defaultPosition: {
+              x: -20,
+              y: -40
+            }
+          }} 
+          key={item.id}
           icon={item.icon}
           title={item.name}
           titleBarOptions={[

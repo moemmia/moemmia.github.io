@@ -43,7 +43,7 @@ function App() {
                           rotation: [0, Math.PI + 0.2, 0],
                         },
                         {
-                          position: [0.44, 1.05, 0.325],
+                          position: [0.38, 1.05, 0.325],
                           rotation: [0, Math.PI / 2, 0],
                         },
                         {

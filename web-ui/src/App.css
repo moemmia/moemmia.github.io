@@ -18,7 +18,7 @@
     outline: none;
 }
 
-#webgl > div > div> div  {
+#webgl > div > div > div  {
     z-index: 9;
     position: relative;
     pointer-events: none;
@@ -31,6 +31,17 @@
     background: rgb(85, 170, 170);
 }
 
+#html-overlay > div > div > div{
+    pointer-events: none !important;
+}
+
+#html-overlay > div > div > div > div > div > div > div > div{
+    pointer-events: all !important;
+}
+
+#html-overlay > div > div > div > div > div > div > div:nth-child(2){
+    pointer-events: all !important;
+}
 .jsdos-rso canvas{
     object-fit: contain;
     width: 100% !important;
