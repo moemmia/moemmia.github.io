@@ -27,9 +27,15 @@
   },
   "coding": {
     "treeRoot": "Mi PC",
-    "selectPrompt": "Selecciona un elemento de la lista a la izquierda.",
-    "techLabel": "<0>Tecnología:</0>",
-    "aboutLegend": "Acerca de",
+    "fallback": "Selecciona un elemento de la lista a la izquierda.",
+    "techLabel": "Tecnología:",
+    "aboutLabel": "Acerca de",
+    "categories": {
+      "web": "web",
+      "mobile": "móvil",
+      "vr": "realidad_virtual",
+      "games": "juegos"
+    },
     "projects": {
       "portfolio": {
         "name": "Portafolio 3D",
@@ -49,23 +55,23 @@
       },
       "pogo": {
         "name": "Pogo For Workgroups",
-        "description": "Videojuego basado en físicas creado para una game jam con temática laboral."
+        "description": "Videojuego de recolección basado en físicas creado para una game jam."
       },
       "drac": {
         "name": "Al rescate del dragón",
         "description": "Videojuego narrativo creado para la game jam de Sant Jordi."
       },
       "museum": {
-        "name": "Días monótonos en el museo de la rutina",
-        "description": "Galería de arte digital explorable."
+        "name": "Hundrum days at the routine mu...",
+        "description": "Galería de arte digital."
       },
       "elections": {
-        "name": "Día de elecciones",
+        "name": "Election Day",
         "description": "Experiencia narrativa de toma de decisiones."
       },
       "hand": {
         "name": "Hand Wall",
-        "description": "Videojuego de habilidad donde controlas dedos individuales con teclas separadas."
+        "description": "Videojuego de habilidad donde controlas cada uno de los dedos de las manos con diferes teclas."
       }
     }
   },

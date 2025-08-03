@@ -27,9 +27,15 @@
   },
   "coding": {
     "treeRoot": "My Computer",
-    "selectPrompt": "Pick an item from the list on the left.",
-    "techLabel": "<0>Tech:</0>",
-    "aboutLegend": "About",
+    "fallback": "Pick an item from the list on the left.",
+    "techLabel": "Tech:",
+    "aboutLabel": "About",
+    "categories": {
+      "web": "web",
+      "mobile": "mobile",
+      "vr": "virtual_reality",
+      "games": "games"
+    },
     "projects": {
       "portfolio": {
         "name": "3D Portfolio",

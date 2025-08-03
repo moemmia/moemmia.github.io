@@ -9,119 +9,97 @@ import {
   WebLink,
 } from '@react95/icons';
 
+import { useTranslation, Trans } from 'react-i18next';
+
 const PROJECTS = {
   portfolio: {
     id: 'portfolio',
     label: 'portfolio.html',
-    name: '3D Portfolio',
     tech: ['React', 'Three.js', 'Tailwind', 'Blender'],
     year: '2025',
     link: 'https://github.com/moemmia/moemmia.github.io',
-    description: 'Personal website showcasing my projects and skills in a 3D environment.',
     icon: <Mshtml32536 variant="16x16_4" />,
-    category: 'Web',
+    category: 'web',
   },
   'us-ar': {
     id: 'us-ar',
     label: 'us-ar.apk',
-    name: 'US-AR',
     tech: ['Ionic', 'Firebase', 'Android'],
     year: '2022',
     link: 'https://github.com/moemmia/TFG_AR',
-    description:
-      'Mobile application aimed at evaluating the usability of augmented reality systems. Built as my final degree project, focusing on user interaction and real-world usability testing.',
     icon: <Fte128 variant="16x16_4" />,
-    category: 'Mobile',
+    category: 'mobile',
   },
   reactive: {
     id: 'reactive',
     label: 'reactive.exe',
-    name: 'Reactive',
     tech: ['Unity', 'OpenXR', 'WebRTC'],
     year: '2021',
-    link: '',
-    description:
-      'Virtual reality application integrated with a remote control system via WebRTC, specifically designed to support pediatric patients with delirium.',
+    link: 'https://www.youtube.com/watch?v=DNuNgw26g5Q',
     icon: <UserIcon variant="16x16_4" />,
-    category: 'VirtualReality',
+    category: 'vr',
   },
   balaçera: {
     id: 'balaçera',
     label: 'balaçera.exe',
-    name: 'Balaçera: Bullet Purgatory',
     tech: ['Unity', 'WebGL', 'Firebase', 'Aseprite'],
     year: '2023',
     link: 'https://outsidederoutine.itch.io/balacera',
-    description: 'Arcade 2D bullet hell videogame.',
     icon: <Gcdef100 variant="16x16_8" />,
-    category: 'Games',
+    category: 'games',
   },
   pogo: {
     id: 'pogo',
     label: 'pogo.exe',
-    name: 'Pogo For Workgroups',
     tech: ['Unity', 'Windows', 'Blender'],
     year: '2020',
     link: 'https://moemm.itch.io/pogoforworkgroups',
-    description: 'Playful physics-based videogame created for a work-themed game jam.',
     icon: <Gcdef100 variant="16x16_8" />,
-    category: 'Games',
+    category: 'games',
   },
   drac: {
     id: 'drac',
     label: 'drac.exe',
-    name: 'Al rescate del dragón',
     tech: ['Unity', 'Windows', 'Blender'],
     year: '2020',
     link: 'https://moemm.itch.io/al-rescate-del-dragon',
-    description: 'Narrative videogame created for the Sant Jordi’s game jam.',
     icon: <Gcdef100 variant="16x16_8" />,
-    category: 'Games',
+    category: 'games',
   },
   museum: {
     id: 'museum',
     label: 'museum.exe',
-    name: 'Hundrum days at the routine mu...',
     tech: ['Unity', 'WebGL', 'Photon', 'Blender'],
     year: '2022',
     link: 'https://outsidederoutine.itch.io/humdrum-days-at-the-routine-museum',
-    description: 'Explorable digital art gallery.',
     icon: <Gcdef100 variant="16x16_8" />,
-    category: 'Games',
+    category: 'games',
   },
   elections: {
     id: 'elections',
     label: 'elections.exe',
-    name: 'Election Day',
     tech: ['Unity', 'Windows', 'Blender'],
     year: '2018',
     link: 'https://outsidederoutine.itch.io/election-day',
-    description: 'Narrative decision-making experience',
     icon: <Gcdef100 variant="16x16_8" />,
-    category: 'Games',
+    category: 'games',
   },
   hand: {
     id: 'hand',
     label: 'hand.exe',
-    name: 'Hand Wall',
     tech: ['Unity', 'WebGL', 'Blender'],
     year: '2017',
     link: 'https://moemm.itch.io/hand-wall',
-    description: 'Skill-based videogame where you control individual fingers with separate keys.',
     icon: <Gcdef100 variant="16x16_8" />,
-    category: 'Games',
+    category: 'games',
   },
 };
 
-/* Categories define the folder structure shown in the Tree */
-const CATEGORIES = [
-  { label: 'Web', icon: null },
-  { label: 'Mobile', icon: null },
-  { label: 'VirtualReality', icon: null },
-  { label: 'Games', icon: null },
-];
+const CATEGORIES = [{ label: 'web' }, { label: 'mobile' }, { label: 'vr' }, { label: 'games' }];
 
 function useTreeData(onSelect) {
+  const { t } = useTranslation();
+
   return useMemo(() => {
     const byCat = CATEGORIES.map(cat => {
       const children = Object.values(PROJECTS)
@@ -131,29 +109,32 @@ function useTreeData(onSelect) {
           icon: p.icon,
           onClick: () => onSelect(p.id),
         }));
-      return { label: cat.label, children };
+      return { label: t(`coding.categories.${cat.label}`), children };
     });
     return { data: byCat };
-  }, [onSelect]);
+  }, [onSelect, t]);
 }
 
 function ProjectPanel({ project }) {
+  const { t } = useTranslation();
+
   if (!project) {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
         <TitleBar title="_" />
-        <p style={{ margin: '16px', fontSize: '0.8rem' }}>
-          Pick an item from the list on the left.
-        </p>
+        <p style={{ margin: '16px', fontSize: '0.8rem' }}>{t('coding.fallback')}</p>
       </div>
     );
   }
-  const { name, tech, link, description, icon } = project;
+  const { id, tech, link, icon } = project;
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-      <TitleBar icon={icon || <Explorer100 variant="16x16_4" />} title={name}>
+      <TitleBar
+        icon={icon || <Explorer100 variant="16x16_4" />}
+        title={t(`coding.projects.${id}.name`)}
+      >
         <TitleBar.OptionsBox>
-          {link ? (
+          {link && (
             <TitleBar.Option
               as="a"
               href={link}
@@ -163,16 +144,19 @@ function ProjectPanel({ project }) {
             >
               <WebLink variant="16x16_4" />
             </TitleBar.Option>
-          ) : null}
+          )}
         </TitleBar.OptionsBox>
       </TitleBar>
+
       <div style={{ padding: 12, overflowY: 'auto', flex: 1 }}>
         <p style={{ margin: '0 0 8px 0', fontSize: '0.8rem' }}>
-          <b>Tech:</b> {tech.join(', ')}
+          <b>{t('coding.techLabel')}</b> {tech.join(', ')}
         </p>
-        <Fieldset legend="About">
+        <Fieldset legend={t('coding.aboutLabel')}>
           <Frame padding="$10">
-            <p style={{ margin: 0, fontSize: '0.8rem', lineHeight: 1.2 }}>{description}</p>
+            <p style={{ margin: 0, fontSize: '0.8rem', lineHeight: 1.2 }}>
+              {t(`coding.projects.${id}.description`)}
+            </p>
           </Frame>
         </Fieldset>
       </div>
@@ -181,11 +165,13 @@ function ProjectPanel({ project }) {
 }
 
 export function Coding() {
+  const { t } = useTranslation();
+
   const [selectedId, setSelectedId] = useState(null);
 
   const treeData = useTreeData(id => setSelectedId(id));
   const root = {
-    label: 'My Computer',
+    label: t('coding.treeRoot'),
     icon: <Explorer100 variant="16x16_4" />,
   };
 
