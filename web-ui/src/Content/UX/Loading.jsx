@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export function Loading({ progress }) {
   const [visible, setVisible] = useState(true);
@@ -9,7 +9,7 @@ export function Loading({ progress }) {
     const duration = 1000;
 
     let animationFrame;
-    const animate = (time) => {
+    const animate = time => {
       const elapsed = time - start;
       const progressRatio = Math.min(elapsed / duration, 1);
       const easedRatio = progressRatio * (progress / 100);
@@ -34,13 +34,13 @@ export function Loading({ progress }) {
   return (
     <div
       className={`absolute top-0 left-0 w-[100vw] h-[100vh] flex items-center justify-center bg-[#94ab9e] z-[9999] transition-opacity duration-700 ${
-        visible ? "opacity-100" : "opacity-0 pointer-events-none"
+        visible ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
     >
       <div className="flex flex-col items-center select-none gap-4">
         <div
           className="w-20 h-20 flex items-center justify-center animate-spin"
-          style={{ animationDuration: "2s" }}
+          style={{ animationDuration: '2s' }}
         >
           <img
             src="icons/moet.webp"
@@ -55,7 +55,7 @@ export function Loading({ progress }) {
             className="h-full transition-all duration-100 ease-out"
             style={{
               width: `${Math.min(displayProgress, 100)}%`,
-              background: "#08141e",
+              background: '#08141e',
             }}
           />
         </div>

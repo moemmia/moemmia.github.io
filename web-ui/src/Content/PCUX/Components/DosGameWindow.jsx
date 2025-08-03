@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
-export function DosGameWindow({url}) {
+export function DosGameWindow({ url }) {
   const containerRef = useRef(null);
   const dosRef = useRef(null);
 
@@ -15,7 +15,7 @@ export function DosGameWindow({url}) {
           kiosk: true,
           backendLocked: true,
           mouseCapture: false,
-          volume: 0.2
+          volume: 0.2,
         });
         dosRef.current = dos;
       }
@@ -27,16 +27,16 @@ export function DosGameWindow({url}) {
         dosRef.current = null;
       }
     };
-  }, []);
+  }, [url]);
 
   return (
-    <div style={{ background: 'black', width: '400px', aspectRatio: '1/1', pointerEvents: 'none'}}>
+    <div style={{ background: 'black', width: '400px', aspectRatio: '1/1', pointerEvents: 'none' }}>
       <div
         ref={containerRef}
         style={{
           width: '100%',
           height: '100%',
-          objectFit: 'contain'
+          objectFit: 'contain',
         }}
       />
     </div>

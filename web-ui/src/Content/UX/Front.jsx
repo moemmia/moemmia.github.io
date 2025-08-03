@@ -1,6 +1,6 @@
-import { useScroll } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
-import { useRef } from "react";
+import { useScroll } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
+import { useRef } from 'react';
 
 export function Front() {
   const scroll = useScroll();
@@ -23,35 +23,36 @@ export function Front() {
   });
 
   return (
-        <div className="w-[100svw] h-[100svh] relative overflow-hidden">
-          <div ref={ref1} className="absolute top-16 w-full flex flex-col items-center transition-opacity duration-500">
-            <div className="ring ring-white/50 bg-black px-3 py-2 mb-3">
-              <p className="text-white text-base sm:text-3xl font-mono">
-                Moisés Muñiz Mangas
-              </p>
-            </div>
-            <div className="ring ring-white/50 bg-black px-3 py-2 mb-3">
-              <p className="text-white text-xs sm:text-xl font-mono">
-                Software Engineer
-              </p>
-            </div>
-            <section className="scroller">
-              <span className="scroll-icon">
-                <span className="scroll-icon__wheel-outer">
-                  <span className="scroll-icon__wheel-inner"></span>
-                </span>
-              </span>
-              <p className="text-black font-bold text-center pt-1 font-mono text-xs">Scroll</p>
-            </section>
-          </div>
-
-          <div ref={ref2} className="absolute top-1/4 w-full flex justify-center transition-opacity duration-500">
-            
-          </div>
-
-          <div ref={ref3} className="absolute top-1/4 w-full flex justify-center transition-opacity duration-500">
-            
-          </div>
+    <div className="w-[100svw] h-[100svh] relative overflow-hidden">
+      <div
+        ref={ref1}
+        className="absolute top-16 w-full flex flex-col items-center transition-opacity duration-500"
+      >
+        <div className="ring ring-white/50 bg-black px-3 py-2 mb-3">
+          <p className="text-white text-base sm:text-3xl font-mono">Moisés Muñiz Mangas</p>
         </div>
+        <div className="ring ring-white/50 bg-black px-3 py-2 mb-3">
+          <p className="text-white text-xs sm:text-xl font-mono">Software Engineer</p>
+        </div>
+        <section className="scroller">
+          <span className="scroll-icon">
+            <span className="scroll-icon__wheel-outer">
+              <span className="scroll-icon__wheel-inner"></span>
+            </span>
+          </span>
+          <p className="text-black font-bold text-center pt-1 font-mono text-xs">Scroll</p>
+        </section>
+      </div>
+
+      <div
+        ref={ref2}
+        className="absolute top-1/4 w-full flex justify-center transition-opacity duration-500"
+      ></div>
+
+      <div
+        ref={ref3}
+        className="absolute top-1/4 w-full flex justify-center transition-opacity duration-500"
+      ></div>
+    </div>
   );
 }

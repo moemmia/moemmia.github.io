@@ -1,105 +1,115 @@
 #root {
-    position: fixed;
-    width: 100svw;
-    height: 100svh;
-    text-align: center;
-    -webkit-touch-callout: none; 
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  position: fixed;
+  width: 100svw;
+  height: 100svh;
+  text-align: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 #webgl {
-    position: fixed;
-    top: 0;
-    left: 0;
-    outline: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
 }
 
-#webgl > div > div > div  {
-    z-index: 9;
-    position: relative;
-    pointer-events: none;
-} 
+#webgl > div > div > div {
+  z-index: 9;
+  position: relative;
+  pointer-events: none;
+}
 #webgl > div {
   pointer-events: auto;
-} 
-
-#html-overlay > div{
-    background: rgb(85, 170, 170);
 }
 
-#html-overlay > div > div > div{
-    pointer-events: none !important;
+#html-overlay > div {
+  background: rgb(85, 170, 170);
 }
 
-#html-overlay > div > div > div > div > div > div > div > div{
-    pointer-events: all !important;
+#html-overlay > div > div > div {
+  pointer-events: none !important;
 }
 
-#html-overlay > div > div > div > div > div > div > div:nth-child(2){
-    pointer-events: all !important;
+#html-overlay > div > div > div > div > div > div > div > div {
+  pointer-events: all !important;
 }
-.jsdos-rso canvas{
-    object-fit: contain;
-    width: 100% !important;
-    height: 100% !important;
+
+#html-overlay > div > div > div > div > div > div > div:nth-child(2) {
+  pointer-events: all !important;
+}
+.jsdos-rso canvas {
+  object-fit: contain;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .r95_1ct83mo9 img {
-    margin-top: var(--r95-space-4);
-    margin-right: var(--r95-space-4);
-    min-width: var(--r95-space-2);
-    width: var(--r95-space-20);
-    height: var(--r95-space-20);
-    shape-rendering: auto;
+  margin-top: var(--r95-space-4);
+  margin-right: var(--r95-space-4);
+  min-width: var(--r95-space-2);
+  width: var(--r95-space-20);
+  height: var(--r95-space-20);
+  shape-rendering: auto;
 }
 
 @keyframes scroll {
-    0%   { transform: translateY(0); }
-    25%  { transform: translateY(-6px); }
-    50%  { transform: translateY(0); }
-    75%  { transform: translateY(6px); }
-    100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-6px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .scroll-icon__wheel-outer {
-    display: block;
-    position: absolute;
-    left: 7px;
-    top: 5px;
-    height: 12px;
-    width: 2px;
-    border-radius: 12px;
-    overflow: hidden;
+  display: block;
+  position: absolute;
+  left: 7px;
+  top: 5px;
+  height: 12px;
+  width: 2px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .scroll-icon__wheel-inner {
-    display: block;
-    height: 100%;
-    width: 100%;
-    border-radius: inherit;
-    background: #000000;
-    animation: scroll 2.75s ease-in-out infinite;
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  background: #000000;
+  animation: scroll 2.75s ease-in-out infinite;
 }
 
 .scroll-icon {
-    display: block;
-    position: relative;
-    height: 30px;
-    width: 20px;
-    border: 2px solid #000000;
-    border-radius: 112px;
+  display: block;
+  position: relative;
+  height: 30px;
+  width: 20px;
+  border: 2px solid #000000;
+  border-radius: 112px;
 }
 
 .scroller {
-    flex: 1 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    bottom: 10%;
-    position: fixed;
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  bottom: 10%;
+  position: fixed;
 }

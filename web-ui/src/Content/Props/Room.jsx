@@ -22,7 +22,7 @@ export default function Room({ nodes, materials }) {
         castShadow
         receiveShadow
         geometry={nodes.room.geometry}
-        material={materials["Basic-L"]}
+        material={materials['Basic-L']}
       />
       <mesh
         castShadow
@@ -31,5 +31,5 @@ export default function Room({ nodes, materials }) {
         material={materials.PcScreen}
       />
     </>
-  )
+  );
 }

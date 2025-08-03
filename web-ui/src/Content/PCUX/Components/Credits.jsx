@@ -1,9 +1,8 @@
-import { Fieldset, Frame } from "@react95/core";
+import { Fieldset, Frame } from '@react95/core';
 
 export function Credits() {
   return (
     <div className="text-left flex flex-col gap-4 p-2">
-
       {/* Author */}
       <Fieldset legend="Craftsman" width="100%">
         <Frame padding="$7">

@@ -1,11 +1,5 @@
-import React, { useState, useMemo, Fragment } from 'react';
-import {
-  Tree,
-  Frame,
-  Fieldset,
-  TitleBar,
-  Button,
-} from '@react95/core';
+import { useState, useMemo } from 'react';
+import { Tree, Frame, Fieldset, TitleBar } from '@react95/core';
 import {
   Explorer100,
   Mshtml32536,
@@ -14,7 +8,6 @@ import {
   User as UserIcon,
   WebLink,
 } from '@react95/icons';
-
 
 const PROJECTS = {
   portfolio: {
@@ -35,7 +28,8 @@ const PROJECTS = {
     tech: ['Ionic', 'Firebase', 'Android'],
     year: '2022',
     link: 'https://github.com/moemmia/TFG_AR',
-    description: 'Mobile application aimed at evaluating the usability of augmented reality systems. Built as my final degree project, focusing on user interaction and real-world usability testing.',
+    description:
+      'Mobile application aimed at evaluating the usability of augmented reality systems. Built as my final degree project, focusing on user interaction and real-world usability testing.',
     icon: <Fte128 variant="16x16_4" />,
     category: 'Mobile',
   },
@@ -46,11 +40,12 @@ const PROJECTS = {
     tech: ['Unity', 'OpenXR', 'WebRTC'],
     year: '2021',
     link: '',
-    description: 'Virtual reality application integrated with a remote control system via WebRTC, specifically designed to support pediatric patients with delirium.',
+    description:
+      'Virtual reality application integrated with a remote control system via WebRTC, specifically designed to support pediatric patients with delirium.',
     icon: <UserIcon variant="16x16_4" />,
     category: 'VirtualReality',
   },
-  'balaçera': {
+  balaçera: {
     id: 'balaçera',
     label: 'balaçera.exe',
     name: 'Balaçera: Bullet Purgatory',
@@ -128,10 +123,10 @@ const CATEGORIES = [
 
 function useTreeData(onSelect) {
   return useMemo(() => {
-    const byCat = CATEGORIES.map((cat) => {
+    const byCat = CATEGORIES.map(cat => {
       const children = Object.values(PROJECTS)
-        .filter((p) => p.category === cat.label)
-        .map((p) => ({
+        .filter(p => p.category === cat.label)
+        .map(p => ({
           label: p.label,
           icon: p.icon,
           onClick: () => onSelect(p.id),
@@ -142,40 +137,39 @@ function useTreeData(onSelect) {
   }, [onSelect]);
 }
 
-function TechList({ tech }) {
-  if (!tech?.length) return null;
-  return (
-    <ul style={{ margin: 0, paddingLeft: '1rem', fontSize: '0.75rem', lineHeight: 1.2 }}>
-      {tech.map((t) => (
-        <li key={t}>{t}</li>
-      ))}
-    </ul>
-  );
-}
-
 function ProjectPanel({ project }) {
   if (!project) {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
         <TitleBar title="_" />
-        <p style={{ margin: '16px', fontSize: '0.8rem' }}>Pick an item from the list on the left.</p>
+        <p style={{ margin: '16px', fontSize: '0.8rem' }}>
+          Pick an item from the list on the left.
+        </p>
       </div>
     );
   }
-  const { name, tech, year, link, description, icon } = project;
+  const { name, tech, link, description, icon } = project;
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       <TitleBar icon={icon || <Explorer100 variant="16x16_4" />} title={name}>
         <TitleBar.OptionsBox>
           {link ? (
-            <TitleBar.Option as="a" href={link} target="_blank" rel="noopener noreferrer" title="Open link">
+            <TitleBar.Option
+              as="a"
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Open link"
+            >
               <WebLink variant="16x16_4" />
             </TitleBar.Option>
           ) : null}
         </TitleBar.OptionsBox>
       </TitleBar>
       <div style={{ padding: 12, overflowY: 'auto', flex: 1 }}>
-        <p style={{ margin: '0 0 8px 0', fontSize: '0.8rem' }}><b>Tech:</b> {tech.join(', ')}</p>
+        <p style={{ margin: '0 0 8px 0', fontSize: '0.8rem' }}>
+          <b>Tech:</b> {tech.join(', ')}
+        </p>
         <Fieldset legend="About">
           <Frame padding="$10">
             <p style={{ margin: 0, fontSize: '0.8rem', lineHeight: 1.2 }}>{description}</p>
@@ -189,7 +183,7 @@ function ProjectPanel({ project }) {
 export function Coding() {
   const [selectedId, setSelectedId] = useState(null);
 
-  const treeData = useTreeData((id) => setSelectedId(id));
+  const treeData = useTreeData(id => setSelectedId(id));
   const root = {
     label: 'My Computer',
     icon: <Explorer100 variant="16x16_4" />,
@@ -211,4 +205,3 @@ export function Coding() {
     </div>
   );
 }
-

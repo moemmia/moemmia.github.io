@@ -1,4 +1,4 @@
-import ArcadeScreen from "./ArcadeScreen";
+import ArcadeScreen from './ArcadeScreen';
 
 export default function Arcade({ nodes, materials }) {
   return (
@@ -8,7 +8,8 @@ export default function Arcade({ nodes, materials }) {
       geometry={nodes.arcade.geometry}
       material={materials.Arcade}
       position={[-0.093, 0, 1.43]}
-      scale={0.81}>
+      scale={0.81}
+    >
       <mesh
         castShadow
         receiveShadow
@@ -18,5 +19,5 @@ export default function Arcade({ nodes, materials }) {
       />
       <ArcadeScreen nodes={nodes} />
     </mesh>
-  )
+  );
 }

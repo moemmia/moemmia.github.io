@@ -9,15 +9,21 @@ import { useState } from 'react';
 import { Contact } from './Components/Contact';
 import { Resume } from './Components/Resume';
 import { Coding } from './Components/Coding';
-import { Credits} from './Components/Credits'
+import { Credits } from './Components/Credits';
 
 export default function PcDisplay() {
   const [desktopItems] = useState([
     {
       id: 'karateka',
       name: 'Karateka',
-      icon: <img src="icons/karateka.webp" className='w-[32px] r95_1ct83mo9 object-contain object-left'/>,
-      content: () => <DosGameWindow url='/js-dos/Karateka.jsdos'/>,
+      icon: (
+        <img
+          alt="karateka"
+          src="icons/karateka.webp"
+          className="w-[32px] h-[32px] r95_1ct83mo9 object-contain object-left"
+        />
+      ),
+      content: () => <DosGameWindow url="/js-dos/Karateka.jsdos" />,
       showOnDesktop: true,
       showInTaskbar: false,
     },
@@ -41,7 +47,7 @@ export default function PcDisplay() {
       id: 'contact',
       name: 'Contact',
       icon: <Phone2 variant="32x32_4" />,
-      content: () => <Contact/>,
+      content: () => <Contact />,
       showOnDesktop: true,
       showInTaskbar: false,
     },
@@ -49,7 +55,9 @@ export default function PcDisplay() {
       id: 'source',
       name: 'Source Code',
       icon: <Progman14 variant="32x32_4" />,
-      action: () => {window.open("https://github.com/moemmia/moemmia.github.io", "_blank");},
+      action: () => {
+        window.open('https://github.com/moemmia/moemmia.github.io', '_blank');
+      },
       showOnDesktop: false,
       showInTaskbar: true,
     },
@@ -66,28 +74,27 @@ export default function PcDisplay() {
   const [openItems, setOpenItems] = useState([]);
   const [zOrder, setZOrder] = useState([]);
 
-  const handleOpen = (id) => {
-    setOpenItems((prev) => (prev.includes(id) ? prev : [...prev, id]));
+  const handleOpen = id => {
+    setOpenItems(prev => (prev.includes(id) ? prev : [...prev, id]));
     bringToFront(id);
   };
 
-  const handleClose = (id) => {
-    setOpenItems((prev) => prev.filter((item) => item !== id));
-    setZOrder((prev) => prev.filter((item) => item !== id));
+  const handleClose = id => {
+    setOpenItems(prev => prev.filter(item => item !== id));
+    setZOrder(prev => prev.filter(item => item !== id));
   };
 
-  const bringToFront = (id) => {
-    setZOrder((prev) => [...prev.filter((item) => item !== id), id]);
+  const bringToFront = id => {
+    setZOrder(prev => [...prev.filter(item => item !== id), id]);
   };
 
   return (
     <div className="w-full h-full bg-[#5aa] relative overflow-hidden">
-
       {/* Ícons */}
       <div className="absolute inset-0 p-4 grid grid-cols-7  grid-rows-7 gap-x-8 gap-y-8 grid-flow-col">
         {desktopItems
-          .filter((item) => item.showOnDesktop)
-          .map((item) => (
+          .filter(item => item.showOnDesktop)
+          .map(item => (
             <div
               key={item.id}
               className="flex flex-col items-center cursor-pointer"
@@ -104,25 +111,29 @@ export default function PcDisplay() {
         list={
           <List>
             {desktopItems
-              .filter((item) => item.showInTaskbar)
-              .map((item) => (
-                <List.Item key={item.id} icon={item.icon} onClick={() => {
-                    handleOpen(item.id)
-                    item.action?.()
-                }}>
+              .filter(item => item.showInTaskbar)
+              .map(item => (
+                <List.Item
+                  key={item.id}
+                  icon={item.icon}
+                  onClick={() => {
+                    handleOpen(item.id);
+                    item.action?.();
+                  }}
+                >
                   {item.name}
                 </List.Item>
               ))}
-              <List.Divider></List.Divider>
-              <List.Item icon={<Computer4 variant="32x32_4" />} onClick={() => {}}>
-                Shut Down...
-              </List.Item>
+            <List.Divider></List.Divider>
+            <List.Item icon={<Computer4 variant="32x32_4" />} onClick={() => {}}>
+              Shut Down...
+            </List.Item>
           </List>
         }
       />
 
       {/* Windows */}
-      {desktopItems.map((item) => (
+      {desktopItems.map(item => (
         <DesktopItem
           key={item.id}
           item={item}
