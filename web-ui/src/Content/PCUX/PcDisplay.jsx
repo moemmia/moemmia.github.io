@@ -5,22 +5,40 @@ import { TaskBar, List } from '@react95/core';
 import { Phone2, Grpconv100, Progman34, Awfxcg321303, Progman14, Computer4 } from '@react95/icons';
 import { DosGameWindow } from './Components/DosGameWindow';
 import { DesktopItem } from './Components/DesktopItem';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Contact } from './Components/Contact';
 import { Resume } from './Components/Resume';
 import { Coding } from './Components/Coding';
 import { Credits } from './Components/Credits';
 
+import { useTranslation } from 'react-i18next';
+
 export default function PcDisplay() {
+  const { t } = useTranslation();
+
+  const taskBarRef = useRef(null);
+
+  useEffect(() => {
+    if (!taskBarRef.current) return;
+    const walker = document.createTreeWalker(taskBarRef.current, NodeFilter.SHOW_TEXT, null, false);
+
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      if (node.nodeValue.includes('Start')) {
+        node.nodeValue = node.nodeValue.replace('Start', t('windows.start'));
+      }
+    }
+  }, [t]);
+
   const [desktopItems] = useState([
     {
       id: 'karateka',
-      name: 'Karateka',
+      name: t('windows.karateka'),
       icon: (
         <img
           alt="karateka"
           src="icons/karateka.webp"
-          className="w-[32px] h-[32px] r95_1ct83mo9 object-contain object-left"
+          className="w-[32px] h-[auto] r95_1ct83mo9 object-contain object-left"
         />
       ),
       content: () => <DosGameWindow url="/js-dos/Karateka.jsdos" />,
@@ -29,7 +47,7 @@ export default function PcDisplay() {
     },
     {
       id: 'coding',
-      name: 'Coding',
+      name: t('windows.coding'),
       icon: <Grpconv100 variant="32x32_4" />,
       content: () => <Coding />,
       showOnDesktop: true,
@@ -37,7 +55,7 @@ export default function PcDisplay() {
     },
     {
       id: 'resume',
-      name: 'Resume',
+      name: t('windows.resume'),
       icon: <Progman34 variant="32x32_4" />,
       content: () => <Resume />,
       showOnDesktop: true,
@@ -45,7 +63,7 @@ export default function PcDisplay() {
     },
     {
       id: 'contact',
-      name: 'Contact',
+      name: t('windows.contact'),
       icon: <Phone2 variant="32x32_4" />,
       content: () => <Contact />,
       showOnDesktop: true,
@@ -53,7 +71,7 @@ export default function PcDisplay() {
     },
     {
       id: 'source',
-      name: 'Source Code',
+      name: t('windows.source'),
       icon: <Progman14 variant="32x32_4" />,
       action: () => {
         window.open('https://github.com/moemmia/moemmia.github.io', '_blank');
@@ -63,7 +81,7 @@ export default function PcDisplay() {
     },
     {
       id: 'credits',
-      name: 'Credits',
+      name: t('windows.credits'),
       icon: <Awfxcg321303 variant="32x32_4" />,
       content: () => <Credits />,
       showOnDesktop: false,
@@ -108,6 +126,7 @@ export default function PcDisplay() {
 
       {/* TaskBar */}
       <TaskBar
+        ref={taskBarRef}
         list={
           <List>
             {desktopItems
@@ -126,7 +145,7 @@ export default function PcDisplay() {
               ))}
             <List.Divider></List.Divider>
             <List.Item icon={<Computer4 variant="32x32_4" />} onClick={() => {}}>
-              Shut Down...
+              {t('windows.shut')}
             </List.Item>
           </List>
         }

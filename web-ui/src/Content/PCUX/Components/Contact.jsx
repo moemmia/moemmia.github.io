@@ -1,11 +1,14 @@
+import { useTranslation } from 'react-i18next';
+
 export function Contact() {
+  const { t } = useTranslation();
   return (
-    <div className="text-left flex flex-col gap-2 w-[235px]">
+    <div className="text-left flex flex-col gap-2 w-[284px]">
       <p>
-        Email me at:{' '}
+        {`${t('contact.mailme')} `}
         <a href="mailto:moises.muniz.mangas@gmail.com">moises.muniz.mangas@gmail.com</a>
       </p>
-      <p>Or find me on social media:</p>
+      <p>{`${t('contact.findme')} `}</p>
       <div className="flex flex-row h-5 place-content-center gap-4 overflow-hidden">
         <a
           className="contents"

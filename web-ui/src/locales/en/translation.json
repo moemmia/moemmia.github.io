@@ -1,0 +1,28 @@
+{
+  "main": {
+    "scroll": "Scroll",
+    "name": "Moisés Muñiz Mangas",
+    "title": "Software Engineer"
+  },
+  "windows": {
+    "karateka": "Karateka",
+    "coding": "Coding",
+    "resume": "Resume",
+    "contact": "Contact",
+    "source": "Source Code",
+    "credits": "Credits",
+    "shut": "Shut Down...",
+    "start": "Start"
+  },
+  "contact": {
+    "mailme": "Email me at:",
+    "findme": "Or find me on social media:"
+  },
+  "credits": {
+    "craftsman": "Craftsman",
+    "authorText": "<0>Moi</0>_ design, code, models, animations and textures.",
+    "toolsTech": "Tools & Tech",
+    "builtWith": "<0>Built with</0>_ react-three-fiber, react95, js-dos, blender.",
+    "inspirations": "Inspirations"
+  }
+}

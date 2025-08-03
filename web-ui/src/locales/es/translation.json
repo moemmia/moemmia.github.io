@@ -1,0 +1,28 @@
+{
+  "main": {
+    "scroll": "Scroll",
+    "name": "Moisés Muñiz Mangas",
+    "title": "Ingeniero de software"
+  },
+  "windows": {
+    "karateka": "Karateka",
+    "coding": "Programación",
+    "resume": "Currículum",
+    "contact": "Contacto",
+    "source": "Código fuente",
+    "credits": "Créditos",
+    "shut": "Apagar el sistema...",
+    "start": "Inicio"
+  },
+  "contact": {
+    "mailme": "Envíame un correo a:",
+    "findme": "O búscame en redes sociales:"
+  },
+  "credits": {
+    "craftsman": "Artesano",
+    "authorText": "<0>Moi</0>_  diseño, código, modelos, animaciones y texturas.",
+    "toolsTech": "Herramientas y tecnología",
+    "builtWith": "<0>Construido con</0>_ react-three-fiber, react95, js-dos, blender.",
+    "inspirations": "Inspiraciones"
+  }
+}

@@ -1,28 +1,26 @@
 import { Fieldset, Frame } from '@react95/core';
+import { useTranslation, Trans } from 'react-i18next';
 
 export function Credits() {
+  const { t } = useTranslation();
   return (
     <div className="text-left flex flex-col gap-4 p-2">
       {/* Author */}
-      <Fieldset legend="Craftsman" width="100%">
+      <Fieldset legend={t('credits.craftsman')} width="100%">
         <Frame padding="$7">
-          <p>
-            <b>Moi</b>_ design, code, models, animations and textures.
-          </p>
+          <Trans i18nKey="credits.authorText" components={[<b key="0" />]}></Trans>
         </Frame>
       </Fieldset>
 
       {/* Tools */}
-      <Fieldset legend="Tools & Tech" width="100%">
+      <Fieldset legend={t('credits.toolsTech')} width="100%">
         <Frame padding="$7">
-          <p>
-            <b>Built with</b>_ react-three-fiber, react95, js-dos, blender.
-          </p>
+          <Trans i18nKey="credits.builtWith" components={[<b key="0" />]}></Trans>
         </Frame>
       </Fieldset>
 
       {/* Inspirations */}
-      <Fieldset legend="Inspirations" width="100%">
+      <Fieldset legend={t('credits.inspirations')} width="100%">
         <Frame padding="$7">
           <ul className="list-disc pl-5 space-y-1">
             <li>
