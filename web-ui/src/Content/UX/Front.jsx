@@ -4,6 +4,8 @@ import { useRef } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
+import LanguageSwitcher from './LanguageSwitcher';
+
 export function Front() {
   const { t } = useTranslation();
 
@@ -30,8 +32,12 @@ export function Front() {
     <div className="w-[100svw] h-[100svh] relative overflow-hidden">
       <div
         ref={ref1}
-        className="absolute top-16 w-full flex flex-col items-center transition-opacity duration-500"
+        className="absolute top-8 w-full flex flex-col items-center transition-opacity duration-500"
       >
+        <div className="absolute top-0 right-7 m-0 z-20 pointer-events-auto">
+          <LanguageSwitcher />
+        </div>
+
         <div className="ring ring-white/50 bg-black px-3 py-2 mb-3">
           <p className="text-white text-base sm:text-3xl font-mono">{t('main.name')}</p>
         </div>
