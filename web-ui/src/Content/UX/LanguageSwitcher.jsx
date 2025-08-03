@@ -39,7 +39,7 @@ const LanguageSwitcher = () => {
       >
         {currentLang.label}
         <svg
-          className={`w-3 h-3 ml-1 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+          className={`w-3 h-3 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
@@ -51,7 +51,7 @@ const LanguageSwitcher = () => {
       </button>
 
       {open && (
-        <ul className="absolute right-0 mt-[0.5em] w-[5.1em] bg-black ring ring-white/50 shadow-lg z-10">
+        <ul className="absolute right-0 mt-[0.5em] w-[4.76em] bg-black ring ring-white/50 shadow-lg z-10">
           {LANGUAGES.map(({ code, label }) => {
             if (i18n.language === code) return null;
             return (

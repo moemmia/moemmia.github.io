@@ -1,6 +1,8 @@
 import { Modal, TitleBar } from '@react95/core';
+import { useTranslation } from 'react-i18next';
 
 export function DesktopItem({ item, isOpen, onClose, onFocus, zIndex }) {
+  const { t } = useTranslation();
   if (!isOpen) return null;
 
   return (
@@ -22,7 +24,7 @@ export function DesktopItem({ item, isOpen, onClose, onFocus, zIndex }) {
           }}
           key={item.id}
           icon={item.icon}
-          title={item.name}
+          title={t(`windows.${item.id}`)}
           titleBarOptions={[<TitleBar.Close key="close" onClick={onClose} />]}
         >
           <Modal.Content>{item.content()}</Modal.Content>

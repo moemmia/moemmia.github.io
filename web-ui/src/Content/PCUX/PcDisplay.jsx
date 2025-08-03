@@ -14,7 +14,7 @@ import { Credits } from './Components/Credits';
 import { useTranslation } from 'react-i18next';
 
 export default function PcDisplay() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const taskBarRef = useRef(null);
 
@@ -26,14 +26,14 @@ export default function PcDisplay() {
       const node = walker.currentNode;
       if (node.nodeValue.includes('Start')) {
         node.nodeValue = node.nodeValue.replace('Start', t('windows.start'));
+        node.nodeValue = node.nodeValue.replace('Inicio', t('windows.start'));
       }
     }
-  }, [t]);
+  }, [t, i18n.language]);
 
   const [desktopItems] = useState([
     {
       id: 'karateka',
-      name: t('windows.karateka'),
       icon: (
         <img
           alt="karateka"
@@ -47,7 +47,6 @@ export default function PcDisplay() {
     },
     {
       id: 'coding',
-      name: t('windows.coding'),
       icon: <Grpconv100 variant="32x32_4" />,
       content: () => <Coding />,
       showOnDesktop: true,
@@ -55,7 +54,6 @@ export default function PcDisplay() {
     },
     {
       id: 'resume',
-      name: t('windows.resume'),
       icon: <Progman34 variant="32x32_4" />,
       content: () => <Resume />,
       showOnDesktop: true,
@@ -63,7 +61,6 @@ export default function PcDisplay() {
     },
     {
       id: 'contact',
-      name: t('windows.contact'),
       icon: <Phone2 variant="32x32_4" />,
       content: () => <Contact />,
       showOnDesktop: true,
@@ -71,7 +68,6 @@ export default function PcDisplay() {
     },
     {
       id: 'source',
-      name: t('windows.source'),
       icon: <Progman14 variant="32x32_4" />,
       action: () => {
         window.open('https://github.com/moemmia/moemmia.github.io', '_blank');
@@ -81,7 +77,6 @@ export default function PcDisplay() {
     },
     {
       id: 'credits',
-      name: t('windows.credits'),
       icon: <Awfxcg321303 variant="32x32_4" />,
       content: () => <Credits />,
       showOnDesktop: false,
@@ -119,7 +114,7 @@ export default function PcDisplay() {
               onClick={() => handleOpen(item.id)}
             >
               <div>{item.icon}</div>
-              <span className="text-xs mt-1 select-none">{item.name}</span>
+              <span className="text-xs mt-1 select-none">{t(`windows.${item.id}`)}</span>
             </div>
           ))}
       </div>
@@ -140,7 +135,7 @@ export default function PcDisplay() {
                     item.action?.();
                   }}
                 >
-                  {item.name}
+                  {t(`windows.${item.id}`)}
                 </List.Item>
               ))}
             <List.Divider></List.Divider>
