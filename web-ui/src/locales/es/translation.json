@@ -24,5 +24,87 @@
     "toolsTech": "Herramientas y tecnología",
     "builtWith": "<0>Construido con</0>_ react-three-fiber, react95, js-dos, blender.",
     "inspirations": "Inspiraciones"
+  },
+  "coding": {
+    "treeRoot": "Mi PC",
+    "selectPrompt": "Selecciona un elemento de la lista a la izquierda.",
+    "techLabel": "<0>Tecnología:</0>",
+    "aboutLegend": "Acerca de",
+    "projects": {
+      "portfolio": {
+        "name": "Portafolio 3D",
+        "description": "Sitio web personal que muestra mis proyectos y habilidades en un entorno 3D."
+      },
+      "us-ar": {
+        "name": "US-AR",
+        "description": "Aplicación móvil orientada a evaluar la usabilidad de sistemas de realidad aumentada. Desarrollada como mi proyecto final de carrera, enfocándose en la interacción del usuario y pruebas de usabilidad en el mundo real."
+      },
+      "reactive": {
+        "name": "Reactive",
+        "description": "Aplicación de realidad virtual integrada con un sistema de control remoto vía WebRTC, diseñada específicamente para apoyar a pacientes pediátricos con delirio."
+      },
+      "balaçera": {
+        "name": "Balaçera: Bullet Purgatory",
+        "description": "Videojuego arcade 2D tipo bullet hell."
+      },
+      "pogo": {
+        "name": "Pogo For Workgroups",
+        "description": "Videojuego basado en físicas creado para una game jam con temática laboral."
+      },
+      "drac": {
+        "name": "Al rescate del dragón",
+        "description": "Videojuego narrativo creado para la game jam de Sant Jordi."
+      },
+      "museum": {
+        "name": "Días monótonos en el museo de la rutina",
+        "description": "Galería de arte digital explorable."
+      },
+      "elections": {
+        "name": "Día de elecciones",
+        "description": "Experiencia narrativa de toma de decisiones."
+      },
+      "hand": {
+        "name": "Hand Wall",
+        "description": "Videojuego de habilidad donde controlas dedos individuales con teclas separadas."
+      }
+    }
+  },
+  "resume": {
+    "tabs": {
+      "about": "Acerca de",
+      "education": "Educación",
+      "experience": "Experiencia",
+      "skills": "Habilidades"
+    },
+    "greeting": "<0>Hola, soy Moi</0>",
+    "title": "un Ingeniero de Software",
+    "about": "apasionado por la accesibilidad, la interacción del usuario y la creación de experiencias digitales inclusivas e intuitivas en todo tipo de dispositivos. Comprometido con la innovación y la mejora continua.",
+    "education": {
+      "bachelor": "<0>Grado en Ingeniería del Software</0> en la Universidad de Oviedo (2020)",
+      "master": "<0>Máster en Gráficos por Computador, Realidad Virtual y Simulación</0> en U-TAD (2021)"
+    },
+    "experience": {
+      "ctic": "<0>Desarrollador de Tecnologías Inmersivas</0> en el Centro Tecnológico CTIC (Oct 2021 – Presente)",
+      "imascono": "<0>Desarrollador Web</0> en Imascono (Jun 2021 – Oct 2021)",
+      "gooapps": "<0>Desarrollador Móvil</0> en GooApps (Nov 2019 – Oct 2020)",
+      "adele": "<0>Desarrollador Web</0> en Adele Robots (Ene 2019 – May 2019)"
+    },
+    "skills": {
+      "programming": "Programación",
+      "languages": "Idiomas",
+      "cv": "Descargar CV"
+    },
+    "tech": {
+      "xr": "Realidades Extendidas (XR)",
+      "unity": "Unity / C#",
+      "react": "React / Redux",
+      "three": "ThreeJS / Javascript",
+      "html": "HTML / CSS",
+      "git": "Git",
+      "blender": "Blender",
+      "docker": "Docker",
+      "spanish": "Español",
+      "english": "Inglés"
+    }
   }
 }
