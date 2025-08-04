@@ -31,14 +31,19 @@
   pointer-events: auto;
 }
 
-#html-overlay > div {
-  transform: scale(0.5);
-  transform-origin: top left;
+@media (pointer: fine) {
+  #html-overlay {
+    transform: scale(0.5);
+    transform-origin: top left;
+  }
+
+  #html-overlay > div {
+    zoom: 2;
+  }
 }
 
 #html-overlay > div {
   background: rgb(85, 170, 170);
-  zoom: 200%;
 }
 
 #html-overlay > div > div > div {
