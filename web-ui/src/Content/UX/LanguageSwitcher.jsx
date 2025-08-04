@@ -32,7 +32,7 @@ const LanguageSwitcher = () => {
     <div ref={switcherRef} className="relative inline-block text-left">
       <button
         onClick={() => setOpen(!open)}
-        className="bg-black ring ring-white/50 px-3 py-1 flex items-center gap-2 text-white text-xs font-mono hover:bg-white hover:text-black transition"
+        className="bg-black ring ring-white/50 px-2 py-1 flex items-center gap-1 text-white text-xs font-mono hover:bg-white hover:text-black transition"
         aria-haspopup="true"
         aria-expanded={open}
         type="button"
@@ -51,13 +51,12 @@ const LanguageSwitcher = () => {
       </button>
 
       {open && (
-        <ul className="absolute right-0 mt-[0.5em] w-[4.76em] bg-black ring ring-white/50 shadow-lg z-10">
-          {LANGUAGES.map(({ code, label }) => {
-            if (i18n.language === code) return null;
+        <ul className="absolute mt-[0.5em] w-[-webkit-fill-available] bg-black ring ring-white/50 shadow-lg z-10">
+          {LANGUAGES.filter(l => l.code !== currentLang.code).map(({ code, label }) => {
             return (
               <li
                 key={code}
-                className={`cursor-pointer px-3 py-1 text-white text-xs font-mono hover:bg-white hover:text-black`}
+                className={`cursor-pointer px-2 py-1 text-white text-xs font-mono hover:bg-white hover:text-black`}
                 onClick={() => changeLanguage(code)}
               >
                 {label}

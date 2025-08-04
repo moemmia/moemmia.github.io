@@ -14,6 +14,8 @@ export function Front() {
   const ref2 = useRef(null);
   const ref3 = useRef(null);
 
+  const refbar = useRef(null);
+
   useFrame(() => {
     const offset = Math.max(0, scroll.offset);
 
@@ -25,6 +27,10 @@ export function Front() {
     }
     if (ref3.current) {
       ref3.current.style.opacity = `${Math.min(Math.max((offset - 0.66) * 3, 0), 1)}`;
+    }
+
+    if (refbar.current) {
+      refbar.current.style.width = `${Math.min(offset * 100, 100)}%`;
     }
   });
 
@@ -65,6 +71,13 @@ export function Front() {
         ref={ref3}
         className="absolute top-1/4 w-full flex justify-center transition-opacity duration-500"
       ></div>
+      <div className="absolute bottom-0 left-0 w-[100vw] h-1 bg-white/20 z-50">
+        <div
+          ref={refbar}
+          className="h-full bg-white transition-all duration-75"
+          style={{ width: '0%' }}
+        ></div>
+      </div>
     </div>
   );
 }

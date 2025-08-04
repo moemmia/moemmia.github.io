@@ -17,6 +17,10 @@
   left: 0;
   outline: none;
 }
+#webgl > div > div {
+  scrollbar-width: none;
+  overscroll-behavior: none !important;
+}
 
 #webgl > div > div > div {
   z-index: 9;

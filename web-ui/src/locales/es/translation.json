@@ -28,7 +28,7 @@
   "coding": {
     "treeRoot": "Mi PC",
     "fallback": "Selecciona un elemento de la lista a la izquierda.",
-    "techLabel": "Tecnología:",
+    "techLabel": "Tecnologías:",
     "aboutLabel": "Acerca de",
     "categories": {
       "web": "web",

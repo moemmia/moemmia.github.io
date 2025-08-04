@@ -9,13 +9,17 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    resources: {
+      en: { translation: translationEN },
+      es: { translation: translationES },
+    },
+    supportedLngs: ['es', 'en'],
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false,
     },
-    resources: {
-      en: { translation: translationEN },
-      es: { translation: translationES },
+    detection: {
+      order: ['navigator', 'localStorage', 'htmlTag'],
     },
   });
 
