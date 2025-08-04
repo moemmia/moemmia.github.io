@@ -31,14 +31,11 @@
   pointer-events: auto;
 }
 
-@media (pointer: fine) {
-  #html-overlay {
-    transform: scale(0.5);
-    transform-origin: top left;
-  }
-
+@media screen and (min-width: 1025px) {
   #html-overlay > div {
     zoom: 2;
+    transform: scale(0.5);
+    transform-origin: top left;
   }
 }
 
