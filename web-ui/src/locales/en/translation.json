@@ -15,19 +15,19 @@
     "start": "Start"
   },
   "contact": {
-    "mailme": "Email me at:",
-    "findme": "Or find me on social media:"
+    "mailme": "You can email me at:",
+    "findme": "Or find me on social platforms:"
   },
   "credits": {
-    "craftsman": "Craftsman",
-    "authorText": "<0>Moi</0>_ design, code, models, animations and textures.",
+    "craftsman": "Digital Craftsman",
+    "authorText": "<0>Moi</0>_ design, development, modeling, animation, and texturing.",
     "toolsTech": "Tools & Tech",
     "builtWith": "<0>Built with</0>_ react-three-fiber, react95, js-dos, blender.",
     "inspirations": "Inspirations"
   },
   "coding": {
     "treeRoot": "My Computer",
-    "fallback": "Pick an item from the list on the left.",
+    "fallback": "Select an item from the list on the left.",
     "techLabel": "Tech:",
     "aboutLabel": "About",
     "categories": {
@@ -39,39 +39,39 @@
     "projects": {
       "portfolio": {
         "name": "3D Portfolio",
-        "description": "Personal website showcasing my projects and skills in a 3D environment."
+        "description": "Personal website showcasing my projects and skills in an interactive 3D environment."
       },
       "us-ar": {
         "name": "US-AR",
-        "description": "Mobile application aimed at evaluating the usability of augmented reality systems. Built as my final degree project, focusing on user interaction and real-world usability testing."
+        "description": "Mobile application for evaluating usability in augmented reality systems. Final degree project focused on interaction and testing in real-world contexts."
       },
       "reactive": {
         "name": "Reactive",
-        "description": "Virtual reality application integrated with a remote control system via WebRTC, specifically designed to support pediatric patients with delirium."
+        "description": "Virtual reality application with remote control via WebRTC, designed to support pediatric patients with hospital delirium. Final master's project developed in collaboration with La Paz University Hospital, U-TAD, and several fellow master's students."
       },
       "balaçera": {
         "name": "Balaçera: Bullet Purgatory",
-        "description": "Arcade 2D bullet hell videogame."
+        "description": "2D arcade game in the *bullet hell* genre, featuring intense action and retro style."
       },
       "pogo": {
         "name": "Pogo For Workgroups",
-        "description": "Playful physics-based videogame created for a work-themed game jam."
+        "description": "Physics-based *collectathon* game developed during a game jam."
       },
       "drac": {
         "name": "Al rescate del dragón",
-        "description": "Narrative videogame created for the Sant Jordi’s game jam."
+        "description": "Narrative adventure created for the Sant Jordi game jam."
       },
       "museum": {
         "name": "Hundrum days at the routine mu...",
-        "description": "Explorable digital art gallery."
+        "description": "Interactive digital art gallery exploring the use of artificial intelligence, creativity, and the art world."
       },
       "elections": {
         "name": "Election Day",
-        "description": "Narrative decision-making experience"
+        "description": "A narrative experience based on political and social decision-making."
       },
       "hand": {
         "name": "Hand Wall",
-        "description": "Skill-based videogame where you control individual fingers with separate keys."
+        "description": "A game of skill in where you control each finger with different keys."
       }
     }
   },

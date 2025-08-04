@@ -26,6 +26,8 @@ export default function PcDisplay() {
       const node = walker.currentNode;
       if (node.nodeValue.includes('Start')) {
         node.nodeValue = node.nodeValue.replace('Start', t('windows.start'));
+      }
+      if (node.nodeValue.includes('Inicio')) {
         node.nodeValue = node.nodeValue.replace('Inicio', t('windows.start'));
       }
     }

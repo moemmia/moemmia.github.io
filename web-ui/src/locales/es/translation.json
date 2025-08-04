@@ -1,12 +1,12 @@
 {
   "main": {
-    "scroll": "Scroll",
+    "scroll": "Desliza",
     "name": "Moisés Muñiz Mangas",
-    "title": "Ingeniero de software"
+    "title": "Ingeniero Software"
   },
   "windows": {
     "karateka": "Karateka",
-    "coding": "Programación",
+    "coding": "Proyectos",
     "resume": "Currículum",
     "contact": "Contacto",
     "source": "Código fuente",
@@ -15,21 +15,21 @@
     "start": "Inicio"
   },
   "contact": {
-    "mailme": "Envíame un correo a:",
-    "findme": "O búscame en redes sociales:"
+    "mailme": "Puedes escribirme a:",
+    "findme": "O encontrarme en redes:"
   },
   "credits": {
-    "craftsman": "Artesano",
-    "authorText": "<0>Moi</0>_  diseño, código, modelos, animaciones y texturas.",
-    "toolsTech": "Herramientas y tecnología",
-    "builtWith": "<0>Construido con</0>_ react-three-fiber, react95, js-dos, blender.",
+    "craftsman": "Artesano digital",
+    "authorText": "<0>Moi</0>_  diseño, desarrollo, modelado, animación y texturizado.",
+    "toolsTech": "Herramientas y tecnologías",
+    "builtWith": "<0>Desarrollado con</0>_ react-three-fiber, react95, js-dos, blender.",
     "inspirations": "Inspiraciones"
   },
   "coding": {
     "treeRoot": "Mi PC",
     "fallback": "Selecciona un elemento de la lista a la izquierda.",
     "techLabel": "Tecnologías:",
-    "aboutLabel": "Acerca de",
+    "aboutLabel": "Descripción",
     "categories": {
       "web": "web",
       "mobile": "móvil",
@@ -39,52 +39,52 @@
     "projects": {
       "portfolio": {
         "name": "Portafolio 3D",
-        "description": "Sitio web personal que muestra mis proyectos y habilidades en un entorno 3D."
+        "description": "Sitio web personal que muestra mis proyectos y habilidades en un entorno 3D interactivo."
       },
       "us-ar": {
         "name": "US-AR",
-        "description": "Aplicación móvil orientada a evaluar la usabilidad de sistemas de realidad aumentada. Desarrollada como mi proyecto final de carrera, enfocándose en la interacción del usuario y pruebas de usabilidad en el mundo real."
+        "description": "Aplicación móvil para evaluar la usabilidad en sistemas de realidad aumentada. Proyecto final de grado centrado en la interacción y pruebas en contexto real."
       },
       "reactive": {
         "name": "Reactive",
-        "description": "Aplicación de realidad virtual integrada con un sistema de control remoto vía WebRTC, diseñada específicamente para apoyar a pacientes pediátricos con delirio."
+        "description": "Aplicación de realidad virtual con control remoto vía WebRTC, diseñada para apoyar a pacientes pediátricos con delirio hospitalario. Proyecto final de máster desarrollado en colaboración con el Hospital Universitario La Paz, U-TAD y varios compañeros del máster."
       },
       "balaçera": {
         "name": "Balaçera: Bullet Purgatory",
-        "description": "Videojuego arcade 2D tipo bullet hell."
+        "description": "Juego arcade 2D tipo *bullet hell*, con acción intensa y estilo retro."
       },
       "pogo": {
         "name": "Pogo For Workgroups",
-        "description": "Videojuego de recolección basado en físicas creado para una game jam."
+        "description": "Juego de recolección basado en físicas, desarrollado durante una game jam."
       },
       "drac": {
         "name": "Al rescate del dragón",
-        "description": "Videojuego narrativo creado para la game jam de Sant Jordi."
+        "description": "Aventura narrativa creada para la game jam de Sant Jordi."
       },
       "museum": {
         "name": "Hundrum days at the routine mu...",
-        "description": "Galería de arte digital."
+        "description": "Galería de arte digital interactiva que explora el uso de la inteligencia artificial, la creatividad y el mundo del arte."
       },
       "elections": {
         "name": "Election Day",
-        "description": "Experiencia narrativa de toma de decisiones."
+        "description": "Experiencia narrativa basada en la toma de decisiones políticas y sociales."
       },
       "hand": {
         "name": "Hand Wall",
-        "description": "Videojuego de habilidad donde controlas cada uno de los dedos de las manos con diferes teclas."
+        "description": "Juego de destreza en el que controlas cada dedo con diferentes teclas."
       }
     }
   },
   "resume": {
     "tabs": {
-      "about": "Acerca de",
+      "about": "Sobre mí",
       "education": "Educación",
       "experience": "Experiencia",
       "skills": "Habilidades"
     },
     "greeting": "<0>Hola, soy Moi</0>",
-    "title": "un Ingeniero de Software",
-    "about": "apasionado por la accesibilidad, la interacción del usuario y la creación de experiencias digitales inclusivas e intuitivas en todo tipo de dispositivos. Comprometido con la innovación y la mejora continua.",
+    "title": "un Ingeniero Software",
+    "about": "apasionado por la accesibilidad, la interacción del usuario y la creación de experiencias digitales inclusivas e intuitivas en todo tipo de dispositivos. Comprometido con la innovación y el aprendizaje continuo.",
     "education": {
       "bachelor": "<0>Grado en Ingeniería del Software</0> en la Universidad de Oviedo (2020)",
       "master": "<0>Máster en Gráficos por Computador, Realidad Virtual y Simulación</0> en U-TAD (2021)"
