@@ -3,7 +3,7 @@ import { useThree, useFrame } from '@react-three/fiber';
 import { useScroll } from '@react-three/drei';
 import * as THREE from 'three';
 
-export function Controls({ visibleWidth = 1, minVisibleHeight = 1, steps = [], deadzone = 0.3 }) {
+export function Controls({ visibleWidth = 1, minVisibleHeight = 1, steps = [], deadzone = 0.15 }) {
   const { camera, size } = useThree();
   const scroll = useScroll();
 
@@ -48,8 +48,12 @@ export function Controls({ visibleWidth = 1, minVisibleHeight = 1, steps = [], d
     const next = parsedSteps[Math.min(segmentIndex + 1, segmentCount)];
 
     let lerpT = 0;
-    if (localT >= deadzone) {
-      lerpT = (localT - deadzone) / (1 - deadzone);
+    if (localT <= deadzone) {
+      lerpT = 0;
+    } else if (localT >= 1 - deadzone) {
+      lerpT = 1;
+    } else {
+      lerpT = (localT - deadzone) / (1 - 2 * deadzone);
     }
 
     targetPosition.current.copy(current.position).lerp(next.position, lerpT);

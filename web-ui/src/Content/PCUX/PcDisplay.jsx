@@ -35,15 +35,9 @@ export default function PcDisplay() {
 
   const [desktopItems] = useState([
     {
-      id: 'karateka',
-      icon: (
-        <img
-          alt="karateka"
-          src="icons/karateka.webp"
-          className="w-[32px] h-[auto] r95_1ct83mo9 object-contain object-left"
-        />
-      ),
-      content: () => <DosGameWindow url="/js-dos/Karateka.jsdos" />,
+      id: 'resume',
+      icon: <Progman34 variant="32x32_4" />,
+      content: () => <Resume />,
       showOnDesktop: true,
       showInTaskbar: false,
     },
@@ -55,16 +49,22 @@ export default function PcDisplay() {
       showInTaskbar: false,
     },
     {
-      id: 'resume',
-      icon: <Progman34 variant="32x32_4" />,
-      content: () => <Resume />,
+      id: 'contact',
+      icon: <Phone2 variant="32x32_4" />,
+      content: () => <Contact />,
       showOnDesktop: true,
       showInTaskbar: false,
     },
     {
-      id: 'contact',
-      icon: <Phone2 variant="32x32_4" />,
-      content: () => <Contact />,
+      id: 'karateka',
+      icon: (
+        <img
+          alt="karateka"
+          src="icons/karateka.webp"
+          className="w-[32px] h-[auto] r95_1ct83mo9 object-contain object-left"
+        />
+      ),
+      content: () => <DosGameWindow url="/js-dos/Karateka.jsdos" />,
       showOnDesktop: true,
       showInTaskbar: false,
     },

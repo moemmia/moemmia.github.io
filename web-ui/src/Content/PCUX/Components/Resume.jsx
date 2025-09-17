@@ -112,7 +112,7 @@ export function Resume() {
         </Tab>
       </Tabs>
 
-      <Button className="mt-2 w-fit self-end">{t('resume.skills.cv')}</Button>
+      {/* <Button className="mt-2 w-fit self-end">{t('resume.skills.cv')}</Button> */}
     </div>
   );
 }

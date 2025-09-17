@@ -1,6 +1,6 @@
 import { useScroll } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
@@ -15,6 +15,9 @@ export function Front() {
   const ref3 = useRef(null);
 
   const refbar = useRef(null);
+  const indicatorRef = useRef(null);
+
+  const [activeSection, setActiveSection] = useState(0);
 
   useFrame(() => {
     const offset = Math.max(0, scroll.offset);
@@ -32,6 +35,10 @@ export function Front() {
     if (refbar.current) {
       refbar.current.style.width = `${Math.min(offset * 100, 100)}%`;
     }
+
+    if (offset < 0.25) setActiveSection(0);
+    else if (offset < 0.75) setActiveSection(1);
+    else setActiveSection(2);
   });
 
   return (
@@ -66,16 +73,23 @@ export function Front() {
         ref={ref2}
         className="absolute top-1/4 w-full flex justify-center transition-opacity duration-500"
       ></div>
-
       <div
         ref={ref3}
         className="absolute top-1/4 w-full flex justify-center transition-opacity duration-500"
       ></div>
-      <div className="absolute bottom-0 left-0 w-[100vw] h-1 bg-white/20 z-50">
+
+      <div className="absolute bottom-0 left-0 w-[100vw] z-50 flex items-center">
         <div
           ref={refbar}
-          className="h-full bg-white transition-all duration-75"
+          className="h-1 bg-white/50 transition-all duration-75 absolute bottom-0 left-0"
           style={{ width: '0%' }}
+        ></div>
+        <div
+          ref={indicatorRef}
+          className="absolute bottom-1 h-0.5 w-[12%] bg-yellow-500 transition-all duration-300 "
+          style={{
+            left: `${activeSection === 0 ? 'calc(0% - 6%)' : activeSection === 1 ? 'calc(50% - 6%)' : 'calc(100% - 6%)'}`,
+          }}
         ></div>
       </div>
     </div>

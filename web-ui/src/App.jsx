@@ -5,7 +5,7 @@ import { Model } from './Content/Props/Model';
 import { Env } from './Content/Environment';
 import { Controls } from './Content/Controls';
 import { Front } from './Content/UX/Front';
-import { ScrollControls, Scroll } from '@react-three/drei';
+import { ScrollControls, Scroll, AdaptiveDpr, AdaptiveEvents } from '@react-three/drei';
 import { Loading } from './Content/UX/Loading';
 import { useState } from 'react';
 
@@ -32,9 +32,10 @@ function App() {
         gl={{
           antialias: true,
           powerPreference: 'low-power',
-          localClippingEnabled: true,
         }}
       >
+        <AdaptiveDpr pixelated />
+        <AdaptiveEvents />
         <Env />
         <Model setProgress={setProgress} />
         <ScrollControls pages={3} eps={1}>
