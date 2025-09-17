@@ -80,16 +80,20 @@ export function Front() {
 
       <div className="absolute bottom-0 left-0 w-[100vw] z-50 flex items-center">
         <div
-          ref={refbar}
-          className="h-1 bg-white/50 transition-all duration-75 absolute bottom-0 left-0"
-          style={{ width: '0%' }}
-        ></div>
-        <div
           ref={indicatorRef}
-          className="absolute bottom-1 h-0.5 w-[12%] bg-yellow-500 transition-all duration-300 "
+          className="absolute bottom-1.5 h-[0.2rem] w-[12%] bg-yellow-500 transition-all duration-300 "
           style={{
             left: `${activeSection === 0 ? 'calc(0% - 6%)' : activeSection === 1 ? 'calc(50% - 6%)' : 'calc(100% - 6%)'}`,
           }}
+        ></div>
+        <div
+          ref={refbar}
+          className="h-1 bg-white transition-all duration-75 absolute bottom-0 left-0"
+          style={{ width: '0%' }}
+        ></div>
+        <div
+          className="h-1 bg-white/30 transition-all duration-75 absolute bottom-0 left-0"
+          style={{ width: '100%' }}
         ></div>
       </div>
     </div>
