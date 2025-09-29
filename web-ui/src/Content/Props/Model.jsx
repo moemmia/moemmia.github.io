@@ -7,7 +7,7 @@ import Arcade from './Arcade';
 import PcScreen from './PcScreen';
 
 // https://gltf-compressor.com && https://gltf.pmnd.rs
-export function Model({ setProgress }) {
+export function Model({ setProgress, playSignal }) {
   const groupRef = useRef();
   const { nodes, materials, animations } = useGLTF('/models/portfolio_compressed.glb');
   const { mouse } = useThree();
@@ -18,7 +18,7 @@ export function Model({ setProgress }) {
 
   return (
     <group dispose={null} ref={groupRef}>
-      <Arcade nodes={nodes} materials={materials} />
+      <Arcade nodes={nodes} materials={materials} playSignal={playSignal} />
       <Room nodes={nodes} materials={materials} />
       <PcScreen nodes={nodes} materials={materials} />
       <Character nodes={nodes} materials={materials} actions={actions} mouse={mouse} />

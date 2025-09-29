@@ -2,7 +2,8 @@
   "main": {
     "scroll": "Desliza",
     "name": "Moisés Muñiz Mangas",
-    "title": "Ingeniero Software"
+    "title": "Ingeniero Software",
+    "click": "¡Haz click para empezar!"
   },
   "windows": {
     "karateka": "Karateka",

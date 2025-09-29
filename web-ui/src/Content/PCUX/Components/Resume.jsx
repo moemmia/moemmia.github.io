@@ -3,11 +3,11 @@ import { Tabs, Tab, Button, Fieldset, Frame, Avatar, Checkbox, ProgressBar } fro
 import { useTranslation, Trans } from 'react-i18next';
 
 export function Resume() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <div className="text-left flex flex-col">
-      <Tabs width="350px" defaultActiveTab={t('resume.tabs.about')}>
+      <Tabs key={i18n.language} width="350px" defaultActiveTab={t('resume.tabs.about')}>
         <Tab title={t('resume.tabs.about')}>
           <div className="flex flex-col gap-3">
             <p>

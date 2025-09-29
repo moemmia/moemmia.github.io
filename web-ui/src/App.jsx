@@ -12,6 +12,8 @@ import { useState } from 'react';
 function App() {
   const [progress, setProgress] = useState(0);
 
+  const [startVideo, setStartVideo] = useState(false);
+
   return (
     <>
       <div
@@ -25,7 +27,7 @@ function App() {
           height: '100swh',
         }}
       />
-      <Loading progress={progress} />
+      <Loading progress={progress} onStart={() => setStartVideo(true)} />
       <Canvas
         camera={{ position: [0.1, 1, -0.5], rotation: [0, Math.PI + 0.2, 0], far: 10, near: 0.1 }}
         id="webgl"
@@ -37,7 +39,7 @@ function App() {
         <AdaptiveDpr pixelated />
         <AdaptiveEvents />
         <Env />
-        <Model setProgress={setProgress} />
+        <Model setProgress={setProgress} playSignal={startVideo} />
         <ScrollControls pages={3} eps={1}>
           <Controls
             minVisibleHeight={0.65}

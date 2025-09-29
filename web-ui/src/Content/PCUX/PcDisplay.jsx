@@ -86,7 +86,7 @@ export default function PcDisplay() {
     },
   ]);
 
-  const [openItems, setOpenItems] = useState([]);
+  const [openItems, setOpenItems] = useState(['resume']);
   const [zOrder, setZOrder] = useState([]);
 
   const handleOpen = id => {
