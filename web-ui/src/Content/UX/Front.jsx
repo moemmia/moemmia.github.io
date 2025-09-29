@@ -5,6 +5,7 @@ import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import LanguageSwitcher from './LanguageSwitcher';
+import SoundToggle from './SoundToggle';
 
 export function Front() {
   const { t } = useTranslation();
@@ -43,21 +44,21 @@ export function Front() {
 
   return (
     <div className="w-[100svw] h-[100svh] relative overflow-hidden">
-      <div
-        ref={ref1}
-        className="absolute top-8 w-full flex flex-col items-center transition-opacity duration-500"
-      >
-        <div className="absolute top-0 right-7 m-0 z-20 pointer-events-auto">
+      <div ref={ref1} className="absolute top-3 w-full flex-col transition-opacity duration-500">
+        <p className="w-fit bg-black px-3 mx-3 py-2 text-white text-base font-mono">
+          {t('main.name')}
+        </p>
+
+        <p className="w-fit bg-black px-3 mx-3 my-1 py-2 text-white text-xs font-mono">
+          {t('main.title')}
+        </p>
+
+        <div className="absolute top-0 right-4 m-0 z-20 pointer-events-auto flex gap-1">
           <LanguageSwitcher />
+          <SoundToggle />
         </div>
 
-        <div className="ring ring-white/50 bg-black px-3 py-2 mb-3">
-          <p className="text-white text-base sm:text-3xl font-mono">{t('main.name')}</p>
-        </div>
-        <div className="ring ring-white/50 bg-black px-3 py-2 mb-3">
-          <p className="text-white text-xs sm:text-xl font-mono">{t('main.title')}</p>
-        </div>
-        <section className="scroller">
+        <section className="m-auto w-full scroller">
           <span className="scroll-icon">
             <span className="scroll-icon__wheel-outer">
               <span className="scroll-icon__wheel-inner"></span>
