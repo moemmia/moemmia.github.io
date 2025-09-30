@@ -26,7 +26,7 @@
     "builtWith": "<0>Built with</0>_ react-three-fiber, react95, js-dos, blender.",
     "inspirations": "Inspirations",
     "music": "Background music",
-    "upbeat": "<0>Music from Uppbeat</0>_ License code: YBKYDHSOERYYUKUO."
+    "upbeat": "<0>Ryan Walz</0> (Uppbeat)_ License code: YBKYDHSOERYYUKUO."
   },
   "coding": {
     "treeRoot": "My Computer",
@@ -46,7 +46,7 @@
       },
       "us-ar": {
         "name": "US-AR",
-        "description": "Mobile application for evaluating usability in augmented reality systems. Final degree project focused on interaction and testing in real-world contexts."
+        "description": "Mobile application for evaluating usability in augmented reality systems. Final degree project."
       },
       "reactive": {
         "name": "Reactive",
@@ -54,7 +54,7 @@
       },
       "balaçera": {
         "name": "Balaçera: Bullet Purgatory",
-        "description": "2D arcade game in the *bullet hell* genre, featuring intense action and retro style."
+        "description": "2D arcade game in the *bullet purgatory* genre, featuring intense action and retro style."
       },
       "pogo": {
         "name": "Pogo For Workgroups",
