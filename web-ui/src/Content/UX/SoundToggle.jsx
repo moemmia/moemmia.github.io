@@ -1,8 +1,12 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
 
-const SoundToggle = () => {
+const SoundToggle = ({ setPlaying }) => {
   const [soundOn, setSoundOn] = useState(true);
+
+  useEffect(() => {
+    setPlaying(soundOn);
+  }, [setPlaying, soundOn]);
 
   return (
     <div className="relative inline-block text-left">

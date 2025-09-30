@@ -60,7 +60,7 @@ function App() {
             ]}
           />
           <Scroll html>
-            <Front />
+            <Front playSignal={startVideo} />
           </Scroll>
         </ScrollControls>
       </Canvas>

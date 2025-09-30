@@ -1,14 +1,28 @@
 import { useScroll } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
 import LanguageSwitcher from './LanguageSwitcher';
 import SoundToggle from './SoundToggle';
 
-export function Front() {
+export function Front({ playSignal }) {
   const { t } = useTranslation();
+
+  const [audio] = useState(new Audio('sounds/ryan-walz-main-version-01-34-3632.mp3'));
+  audio.volume = 0.5;
+  audio.loop = true;
+
+  const [playing, setPlaying] = useState(true);
+
+  useEffect(() => {
+    if (playing && playSignal && audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  }, [playSignal, audio, playing]);
 
   const scroll = useScroll();
   const ref1 = useRef(null);
@@ -44,27 +58,28 @@ export function Front() {
 
   return (
     <div className="w-[100svw] h-[100svh] relative overflow-hidden">
+      <div className="absolute top-3 w-full flex-col">
+        <div className="absolute top-0 right-4 m-0 z-20 pointer-events-auto flex gap-1">
+          <LanguageSwitcher />
+          <SoundToggle setPlaying={setPlaying} />
+        </div>
+      </div>
+
       <div ref={ref1} className="absolute top-3 w-full flex-col transition-opacity duration-500">
         <p className="w-fit bg-black px-3 mx-3 py-2 text-white text-base font-mono">
           {t('main.name')}
         </p>
-
         <p className="w-fit bg-black px-3 mx-3 my-1 py-2 text-white text-xs font-mono">
           {t('main.title')}
         </p>
 
-        <div className="absolute top-0 right-4 m-0 z-20 pointer-events-auto flex gap-1">
-          <LanguageSwitcher />
-          <SoundToggle />
-        </div>
-
-        <section className="m-auto w-full scroller">
+        <section className="bg-black scroller">
           <span className="scroll-icon">
             <span className="scroll-icon__wheel-outer">
               <span className="scroll-icon__wheel-inner"></span>
             </span>
           </span>
-          <p className="text-black font-bold text-center pt-1 font-mono text-xs">
+          <p className="text-white font-bold text-center pt-1 font-mono text-xs">
             {t('main.scroll')}
           </p>
         </section>

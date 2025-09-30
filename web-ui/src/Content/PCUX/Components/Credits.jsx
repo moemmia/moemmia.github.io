@@ -19,6 +19,13 @@ export function Credits() {
         </Frame>
       </Fieldset>
 
+      {/* Music */}
+      <Fieldset legend={t('credits.music')} width="100%">
+        <Frame padding="$7">
+          <Trans i18nKey="credits.upbeat" components={[<b key="0" />]}></Trans>
+        </Frame>
+      </Fieldset>
+
       {/* Inspirations */}
       <Fieldset legend={t('credits.inspirations')} width="100%">
         <Frame padding="$7">
