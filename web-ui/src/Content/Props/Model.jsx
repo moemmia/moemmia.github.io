@@ -18,9 +18,9 @@ export function Model({ setProgress, playSignal }) {
 
   return (
     <group dispose={null} ref={groupRef}>
-      <Arcade nodes={nodes} materials={materials} playSignal={playSignal} />
-      <Room nodes={nodes} materials={materials} />
-      <PcScreen nodes={nodes} materials={materials} />
+      <Arcade nodes={nodes} playSignal={playSignal} />
+      <Room nodes={nodes} actions={actions} />
+      <PcScreen />
       <Character nodes={nodes} materials={materials} actions={actions} mouse={mouse} />
     </group>
   );
