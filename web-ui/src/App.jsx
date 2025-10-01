@@ -9,6 +9,8 @@ import { ScrollControls, Scroll, AdaptiveDpr, AdaptiveEvents } from '@react-thre
 import { Loading } from './Content/UX/Loading';
 import { useState } from 'react';
 
+import { isMobile } from 'react-device-detect';
+
 function App() {
   const [progress, setProgress] = useState(0);
 
@@ -40,7 +42,7 @@ function App() {
         <AdaptiveEvents />
         <Env />
         <Model setProgress={setProgress} playSignal={startVideo} />
-        <ScrollControls pages={3} eps={1}>
+        <ScrollControls horizontal={isMobile} pages={3} eps={1} distance={isMobile ? 2 : 1}>
           <Controls
             minVisibleHeight={0.65}
             visibleWidth={0.5}

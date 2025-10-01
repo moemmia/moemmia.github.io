@@ -7,6 +7,8 @@ import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
 import SoundToggle from './SoundToggle';
 
+import { BrowserView, MobileView } from 'react-device-detect';
+
 export function Front({ playSignal }) {
   const { t } = useTranslation();
 
@@ -72,17 +74,30 @@ export function Front({ playSignal }) {
         <p className="w-fit bg-black px-3 mx-3 my-1 py-2 text-white text-xs font-mono">
           {t('main.title')}
         </p>
-
-        <section className="bg-black scroller">
-          <span className="scroll-icon">
-            <span className="scroll-icon__wheel-outer">
-              <span className="scroll-icon__wheel-inner"></span>
+        <BrowserView>
+          <section className="bg-black scroller">
+            <span className="scroll-icon">
+              <span className="scroll-icon__wheel-outer">
+                <span className="scroll-icon__wheel-inner"></span>
+              </span>
             </span>
-          </span>
-          <p className="text-white font-bold text-center pt-1 font-mono text-xs">
-            {t('main.scroll')}
-          </p>
-        </section>
+            <p className="text-white font-bold text-center pt-1 font-mono text-xs">
+              {t('main.scroll')}
+            </p>
+          </section>
+        </BrowserView>
+        <MobileView>
+          <section className="bg-black scroller">
+            <span className="scroll-icon-mobile">
+              <span className="scroll-icon__wheel-outer">
+                <span className="scroll-icon__wheel-inner"></span>
+              </span>
+            </span>
+            <p className="text-white font-bold text-center pt-1 font-mono text-xs">
+              {t('main.scroll')}
+            </p>
+          </section>
+        </MobileView>
       </div>
 
       <div
