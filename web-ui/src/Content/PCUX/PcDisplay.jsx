@@ -105,8 +105,8 @@ export default function PcDisplay() {
 
   return (
     <div className="w-full h-full bg-[#5aa] relative overflow-hidden">
-      {/* Ícons */}
-      <div className="absolute inset-0 p-4 grid grid-cols-7  grid-rows-7 gap-x-8 gap-y-8 grid-flow-col">
+      {/* Icons */}
+      <div className="absolute inset-0 p-4 grid grid-cols-7 grid-rows-7 gap-x-8 gap-y-8 grid-flow-col">
         {desktopItems
           .filter(item => item.showOnDesktop)
           .map(item => (
@@ -159,6 +159,11 @@ export default function PcDisplay() {
           zIndex={zOrder.indexOf(item.id) + 100}
         />
       ))}
+
+      {/* Version Number */}
+      <p className="absolute top-0 right-0 m-1.5 text-white opacity-30 pointer-events-none">
+        v {process.env.REACT_APP_VERSION}
+      </p>
     </div>
   );
 }
