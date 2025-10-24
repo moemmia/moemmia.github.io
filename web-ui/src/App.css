@@ -139,3 +139,11 @@
   height: 76px;
   width: 76px;
 }
+
+li:hover {
+  cursor: pointer;
+}
+
+li > div > label:hover {
+  cursor: pointer;
+}

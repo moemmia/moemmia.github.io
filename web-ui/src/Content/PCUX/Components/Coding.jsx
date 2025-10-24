@@ -179,13 +179,13 @@ export function Coding() {
 
   return (
     <div className="text-left flex flex-row gap-2" style={{ width: '100%', maxWidth: 480 }}>
-      <Frame w="160px" h="260px" bgColor="$material" padding="$0">
+      <Frame w="160px" h="290px" bgColor="$material" padding="$0">
         <Frame className="overflow-auto" h="100%" bgColor="white" boxShadow="$in" padding="$4">
           <Tree {...treeData} root={root} />
         </Frame>
       </Frame>
 
-      <Frame w="255px" h="260px" bgColor="$material" boxShadow="$in">
+      <Frame w="255px" h="290px" bgColor="$material" boxShadow="$in">
         <ProjectPanel project={selectedProject} />
       </Frame>
     </div>

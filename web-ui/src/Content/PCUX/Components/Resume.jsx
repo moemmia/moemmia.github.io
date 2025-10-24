@@ -58,7 +58,7 @@ export function Resume() {
           <Fieldset
             legend={t('resume.skills.programming')}
             width="100%"
-            height="170px"
+            height="216px"
             className="overflow-y-scroll"
           >
             <Frame padding="$10" className="flex flex-col gap-2">
