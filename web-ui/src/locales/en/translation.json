@@ -37,7 +37,8 @@
       "web": "web",
       "mobile": "mobile",
       "vr": "virtual_reality",
-      "games": "games"
+      "games": "games",
+      "tools": "tools"
     },
     "projects": {
       "portfolio": {
@@ -75,6 +76,10 @@
       "hand": {
         "name": "Hand Wall",
         "description": "A game of skill in where you control each finger with different keys."
+      },
+      "lightmapper": {
+        "name": "Light mapping",
+        "description": "Blender add-on developed to streamline lightmap baking processes. Includes glTF export support, enabling the creation of realistic and efficient environments for interactive web experiences."
       }
     }
   },

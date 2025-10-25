@@ -5,6 +5,7 @@ import {
   Mshtml32536,
   Fte128,
   Gcdef100,
+  HelpBook,
   User as UserIcon,
   WebLink,
 } from '@react95/icons';
@@ -12,15 +13,15 @@ import {
 import { useTranslation, Trans } from 'react-i18next';
 
 const PROJECTS = {
-  portfolio: {
-    id: 'portfolio',
-    label: 'portfolio.html',
-    tech: ['React', 'Three.js', 'Tailwind', 'Blender'],
-    year: '2025',
-    link: 'https://github.com/moemmia/moemmia.github.io',
-    icon: <Mshtml32536 variant="16x16_4" />,
-    category: 'web',
-  },
+  // portfolio: {
+  //   id: 'portfolio',
+  //   label: 'portfolio.html',
+  //   tech: ['React', 'Three.js', 'Tailwind', 'Blender'],
+  //   year: '2025',
+  //   link: 'https://github.com/moemmia/moemmia.github.io',
+  //   icon: <Mshtml32536 variant="16x16_4" />,
+  //   category: 'web',
+  // },
   'us-ar': {
     id: 'us-ar',
     label: 'us-ar.apk',
@@ -93,9 +94,23 @@ const PROJECTS = {
     icon: <Gcdef100 variant="16x16_8" />,
     category: 'games',
   },
+  lightmapper: {
+    id: 'lightmapper',
+    label: 'lightmapper',
+    tech: ['Blender', 'Python', 'Github'],
+    year: '2025',
+    icon: <HelpBook variant="16x16_4" />,
+    category: 'tools',
+  },
 };
 
-const CATEGORIES = [{ label: 'web' }, { label: 'mobile' }, { label: 'vr' }, { label: 'games' }];
+const CATEGORIES = [
+  // { label: 'web' },
+  { label: 'mobile' },
+  { label: 'vr' },
+  { label: 'games' },
+  { label: 'tools' },
+];
 
 function useTreeData(onSelect) {
   const { t } = useTranslation();

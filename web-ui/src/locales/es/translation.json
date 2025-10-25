@@ -37,7 +37,8 @@
       "web": "web",
       "mobile": "móvil",
       "vr": "realidad_virtual",
-      "games": "juegos"
+      "games": "juegos",
+      "tools": "herramientas"
     },
     "projects": {
       "portfolio": {
@@ -75,6 +76,10 @@
       "hand": {
         "name": "Hand Wall",
         "description": "Juego de destreza en el que controlas cada dedo con diferentes teclas."
+      },
+      "lightmapper": {
+        "name": "Mapeo de luces",
+        "description": "Addon de Blender desarrollado para agilizar los procesos de mapao de luces. Incluye compatibilidad con archivos glTF, facilitando la creación de entornos realistas y eficientes para experiencias interactivas en la web."
       }
     }
   },
