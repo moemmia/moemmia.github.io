@@ -39,9 +39,12 @@ export function Resume() {
           <Fieldset legend="" width="100%">
             <Frame padding="$10">
               <Checkbox readOnly checked>
+                <Trans i18nKey="resume.experience.ctic-2" components={[<b key="0" />]} />
+              </Checkbox>
+              <Checkbox readOnly checked={false}>
                 <Trans i18nKey="resume.experience.microven" components={[<b key="0" />]} />
               </Checkbox>
-              <Checkbox readOnly>
+              <Checkbox readOnly checked={false}>
                 <Trans i18nKey="resume.experience.ctic" components={[<b key="0" />]} />
               </Checkbox>
               <Checkbox readOnly checked={false}>
